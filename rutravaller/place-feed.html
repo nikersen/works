@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Страница места</title>
+	<link rel="stylesheet" href="css/reset-ls.css">
+	<!-- <link rel="stylesheet" href="css/fonts.css"> -->
+	<link rel="stylesheet" href="css/style-main.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/components/common-v2.css">
+	<link rel="stylesheet" href="css/layouts/header-v2.css">
+	<link rel="stylesheet" href="css/layouts/footer-v2.css">
+	<link rel="stylesheet" href="css/pages/place/place.css">
+	<link rel="stylesheet" href="css/pages/registration/registration.css">
+	<link rel="stylesheet" href="css/blocks/left-nav.css">
+	<link rel="stylesheet" href="css/blocks/onmap.css">
+	<link rel="stylesheet" href="css/blocks/evaluation.css">
+	<link rel="stylesheet" href="css/blocks/searchbar-v2.css">
+	<link rel="stylesheet" href="css/blocks/header_user-v2.css">
+	<link rel="stylesheet" href="css/blocks/popup-add-material.css">
+	<link rel="stylesheet" href="css/blocks/popup-nav.css">
+	<link rel="stylesheet" href="css/vendor/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/vendor/fontello/css/fontello.css" />
+</head>
+<body>
+	<div class="page">
+		<header class="header">
+			<div class="header-topmenu">
+				<ul class="header-topmenu__items">
+					<li class="header-topmenu__item">
+						<a href="#" class="header-topmenu__btn header-topmenu__btn_privileges">
+			            	<span class="header-top-privileges__desktop">Привилегии при регистрации</span>
+			            </a>
+					</li>
+					<li class="header-topmenu__item">
+						<a href="#" class="header-topmenu__btn header-topmenu__btn_contour" onclick="$(this).closest('.header-topmenu__items').hide().next().fadeIn('fast').next().fadeIn('fast').next().fadeIn('fast');">Войти</a>
+						<a href="#" class="header-topmenu__btn">Регистрация</a>
+					</li>
+					<li class="header-topmenu__item">
+					</li>
+				</ul>
+				<ul class="header-topmenu__items" style="display: none;">
+					<li class="header-topmenu__item">
+						<a href="#" class="header-topmenu__link">Я — <span>турист</span></a>
+					</li>
+					<li class="header-topmenu__item">
+						<a href="#" class="header-topmenu__link">Понравилось <span>656</span></a>
+					</li>
+					<li class="header-topmenu__item">
+						<a href="#" class="header-topmenu__link">Сообщения <span>0</span></a>
+					</li>
+					<li class="header-topmenu__item">
+						<a href="#" class="header-topmenu__link">Рейтинг <span>190</span></a>
+					</li>
+					<li class="header-topmenu__item">
+						<a href="#" class="header-topmenu__link">Друзья <span>152</span></a>
+					</li>
+				</ul>
+				<div class="header-topmenu__item header-topmenu__item_add-material">
+					<a href="#" class="header-topmenu__btn header-topmenu__btn_add-material js-open-popup-add-material"><i class="icons icons_add_white"></i> Добавить материал</a>
+				</div>
+				<div class="header-topmenu__item header-topmenu__item_auth" style="display: none;">
+						<a href="#" class="header-topmenu__link" title="Выйти" onclick="$(this).parent().hide().prev().prev().hide().prev().fadeIn('fast');"><i class="icon-logout"></i></a>
+				</div>
+			</div>
+			<div class="header-mid">
+				<div class="header-mid__table">
+					<div class="header-mid__col header-mid__col_logo">
+						<a href="all.html" class="header-mid__logo"><img src="i/logo.png" alt=""></a>
+						<div class="header__trigger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+					</div>
+					<div class="header-mid__col header-search__col_search">
+						<div class="searchbar">
+							<div class="searchbar__field">
+								<input type="text" class="searchbar__input  js-show-suggest" placeholder="Поиск по названию">
+								<input type="submit" class="searchbar__submit  js-show-suggest" value="">
+								<span class="searchbar__list-trigger"></span>
+							</div>
+						</div>
+					</div>
+					<div class="header-mid__col header-mid__col_user">
+						<a href="#" class="user clearfix  js-show-auth" onClick="$('#overlay, .auth-popup').fadeIn('fast');">
+							<div class="user__photo"><img src="i/abs.png" alt=""></div>
+							<div class="user__about">
+								<div class="user__name"><span>Аноним</span></div>
+								<div class="user__country">Войти в кабинет</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<nav class="header-nav">
+				<div class="show-responsive show-responsive_1023">
+					<a href="#" class="user clearfix" onclick="$('#overlay, .auth-popup').fadeIn('fast');">
+						<div class="user__photo"><img src="i/abs.png" alt=""></div>
+						<div class="user__about">
+							<div class="user__name"><span>Аноним</span></div>
+							<div class="user__country">Войти в кабинет</div>
+						</div>
+					</a>
+					<a href="#" class="header-topmenu__btn header-topmenu__btn_add-material js-open-popup-add-material"><i class="header__icon header__icon_doc"></i> Добавить материал</a>
+					<a href="javascript:void(0)" class="header-topmenu__btn header-topmenu__btn_navigator js-left-menu-open">Навигатор Саграда Фамилия</a>
+				</div>
+				<ul class="header-nav__items">
+					<li class="header-nav__item"><a href="#" class="header-nav__link active">Страны</a></li>
+					<li class="header-nav__item"><a href="#" class="header-nav__link">Фото</a></li>
+					<li class="header-nav__item"><a href="#" class="header-nav__link">Места и экскурсии</a></li>
+					<li class="header-nav__item"><a href="#" class="header-nav__link">Заметки</a></li>
+					<li class="header-nav__item"><a href="#" class="header-nav__link">Вопросы и советы</a></li>
+					<li class="header-nav__item"><a href="#" class="header-nav__link">Сообщества</a></li>
+					<li class="header-nav__item"><a href="#" class="header-nav__link">События</a></li>
+					<li class="header-nav__item"><a href="#" class="header-nav__link">Рейтинги</a></li>
+				</ul>
+				<div class="show-responsive_1023">
+					
+				</div>
+			</nav>
+		</header>
+		<div class="place-head">
+			<img src="images/place_head.png" alt="">
+		</div>
+		<main class="content">
+			<div class="content-table">
+				<div class="col col_left">
+					<div class="tags">
+						<div class="tags__item"><a href="#" class="tags__link">Все места</a></div>
+					</div>
+					<div class="left-nav">
+						<div class="show-responsive show-responsive_768">
+							<a href="javascript:void(0)" class="header-topmenu__btn js-left-menu-hide">Вернуться в меню</a>
+						</div>
+						<div class="left-nav__area">
+							<ul class="left-nav__items">
+								<li class="left-nav__title">Навигатор</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Информация</a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Фотографии  <span class="left-nav__num">544</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Отзывы и оценки  <span class="left-nav__num">150</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Отели рядом  <span class="left-nav__num">73</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Были здесь  <span class="left-nav__num">998</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Рекомендуют  <span class="left-nav__num">509</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Вопросы и советы  <span class="left-nav__num">1</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Экскурсии  <span class="left-nav__num">2</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Новости  <span class="left-nav__num">1</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">События  <span class="left-nav__num">2</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Билеты  <span class="left-nav__num">3</span></a>
+								</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Лента обновлений</a>
+								</li>
+							</ul>
+							<ul class="left-nav__items">
+								<li class="left-nav__title">Спецпредложения</li>
+								<li class="left-nav__item">
+									<a href="#" class="left-nav__link">Скидки на бронирование</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="tags">
+						<div class="tags__item"><a href="#" class="tags__link">Испания</a></div>
+						<div class="tags__item"><a href="#" class="tags__link">Барселона</a></div>
+						<div class="tags__item"><a href="#" class="tags__link">Места Барселоны</a></div>
+						<div class="tags__item"><a href="#" class="tags__link">Барселона-сити</a></div>
+						<div class="tags__item"><a href="#" class="tags__link">Места Барселона-сити</a></div>
+					</div>
+					<div class="content-table">
+						<div class="col">
+							<div class="title">
+								<h1 class="title-h1">Саграда Фамилия</h1>
+								<a href="#rate" class="title-rate">
+									<div class="icon icon_rt"></div>
+									<div class="text">Хорошо, <span class="num">4.47<span class="num_min">/5</span></span></div>
+								</a>
+							</div>
+							<ul class="info-line">
+								<li>Temple Expiatori de la Sagrada Familya</li>
+								<li class="sep">|</li>
+								<li><a href="#" class="info-line__link  info-line__link_green">№2 из 10 Отелей в Красной Поляне</a></li>
+								<li class="sep">|</li>
+								<li><a href="#" class="info-line__link  info-line__link_hint  info-line__link_green">Всемирное наследие ЮНЕСКО</a> <i class="icon icon_que_green"></i></li>
+							</ul>
+							<ul class="info-line">
+								<li><i class="icon icon_point"></i><a href="#map" class="info-line__link">Carrer de Mallorca, 401, 08013 Barcelona, Испания</a></li>
+							</ul>
+							<div class="row_panel">
+								<a href="#" class="btn">
+									<i class="icons icons_bookmark_gray"></i>
+									<span class="btn__text">Добавить в путеводитель</span>
+								</a>
+								<a href="#" class="btn">
+									<i class="icons icons_flag_gray"></i>
+									<span class="btn__text">Я здесь был</span>
+								</a>
+								<a href="#" class="btn">
+									<i class="icons icons_share_gray"></i>
+									<span class="btn__text">Поделиться</span>
+								</a>
+								<div class="btn__group  btn__group_right">
+									<div class="btn__double  btn__double_cyan">
+										<span class="btn  btn__annex  js-btn-dd-trigger"><i class="icon icon_arrow_down"></i></span>
+										<a href="#" class="btn">
+											<i class="icons  icons_cloud_white"></i>
+											<span class="btn__text">Написать отзыв</span>
+										</a>
+									</div>
+									<div class="btn-dd js-btn-dd">
+										<div class="btn-dd__item"><a href="#">Добавить фотографию</a></div>
+										<div class="btn-dd__item"><a href="#">Оставить оценку</a></div>
+										<div class="btn-dd__item"><a href="#">Задать вопрос</a></div>
+										<div class="btn-dd__item"><a href="#">Дать совет</a></div>
+										<div class="btn-dd__item"><a href="#">Написать заметку</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="place-section">
+								<div class="tape">
+									<div class="tape-sort clearfix">
+										<div class="btn__group  btn__group_list  btn__group_w232">
+											<a href="javascript:void(0)" class="btn js-btn-dd-trigger">
+												<span class="btn__text">Смотреть про</span>
+												<div class="icons icons_arrow-down_black"></div>
+											</a>
+											<div class="btn-dd js-btn-dd">
+												<div class="btn-dd__item">
+													<label class="btn-dd__cbx-label">
+		                                                <input type="checkbox" class="btn-dd__cbx-input" checked>
+		                                                <span class="btn-dd__cbx-box"><span></span></span>
+		                                                <span class="btn-dd__cbx-text">Отзывы</span>
+		                                            </label>
+												</div>
+												<div class="btn-dd__item">
+													<label class="btn-dd__cbx-label">
+		                                                <input type="checkbox" class="btn-dd__cbx-input" checked>
+		                                                <span class="btn-dd__cbx-box"><span></span></span>
+		                                                <span class="btn-dd__cbx-text">Фотографии</span>
+		                                            </label>
+												</div>
+												<div class="btn-dd__item">
+													<label class="btn-dd__cbx-label">
+		                                                <input type="checkbox" class="btn-dd__cbx-input" checked>
+		                                                <span class="btn-dd__cbx-box"><span></span></span>
+		                                                <span class="btn-dd__cbx-text">Заметки</span>
+		                                            </label>
+												</div>
+												<div class="btn-dd__item">
+													<label class="btn-dd__cbx-label">
+		                                                <input type="checkbox" class="btn-dd__cbx-input">
+		                                                <span class="btn-dd__cbx-box"><span></span></span>
+		                                                <span class="btn-dd__cbx-text">Советы</span>
+		                                            </label>
+												</div>
+											</div>
+										</div>
+										<div class="tape-sort__items  tape-sort__items_ml">
+											<a href="#" class="tape-sort__item  tape-sort__item_w50">Новое</a>
+											<a href="#" class="tape-sort__item  tape-sort__item_w50 active">Популярное</a>
+										</div>
+									</div>
+									<div class="tape-item">
+										<div class="tape-item__action-right">
+											<div class="action-group-link">
+												<span class="action-link action-link_options" onclick="$(this).toggleClass('active')">
+													<i class="icon icon_dots"></i>
+													<i class="icon icon_dots_bluesky"></i>
+												</span>
+												<div class="action-options">
+													<div class="action-options__item"><a href="#" class="link">Это не интересно</a></div>
+													<div class="action-options__item"><a href="#" class="link">Пожаловаться</a></div>
+													<div class="action-options__item"><a href="#" class="link">Редактировать</a></div>
+													<div class="action-options__item"><a href="#" class="link">Удалить</a></div>
+												</div>
+											</div>
+										</div>
+										<div class="user-board clearfix">
+											<a href="#" class="user-photo"><img src="i/abs.png" alt=""></a>
+											<div class="user-info">
+												<div class="user-info__head">
+													<a href="#" class="user-info__username">ЛевАноним#2</a>
+													<span class="user-info__info">добавил(а) 38 фотографий <a href="#">Саграда Фамилия</a></span>
+												</div>
+												<div class="user-info__date">30 августа 2014 в 20:54</div>
+											</div>
+										</div>
+										<ul class="tape-tags">
+											<li class="tape-tags__tag"><i class="icon icon_tag"></i></li>
+											<li class="tape-tags__item"><a href="#" class="link">Путешествия</a></li>
+											<li class="tape-tags__item"><a href="#" class="link">Финляндия</a></li>
+											<li class="tape-tags__item"><a href="#" class="link">Фотографии</a></li>
+											<li class="tape-tags__item"><a href="#" class="link">Туризм</a></li>
+										</ul>
+										<div class="title"><h2 class="title-h2">Страна муми-троллей</h2></div>
+										<div class="tape-post">
+											<div class="tape-mosaic">
+												<div class="tape-mosaic__row">
+													<div class="tape-mosaic__item">
+														<div class="tape-mosaic__body">
+															<a href="#"><img src="images/image1.jpg" alt=""></a>
+															<div class="tape-mosaic__bot">
+																<span class="tape-mosaic__avatar"><img src="i/_180x180.jpg" alt=""></span>
+																<span class="tape-mosaic__name">Виктор Васильев</span>
+																<span class="tape-mosaic__fav" onclick="$(this).toggleClass('active');">
+																	<svg class="icon" version="1.1" viewBox="-6.9 -13.1 40 40" x="0px" y="0px">
+																		<path class="shape" d="M20.7-7.2c-5.8,0-7.6,4.3-7.6,4.3l0,0c0,0-1.8-4.3-7.6-4.3s-8.4,3.7-8.4,8.1c0,2.2,1.8,5.2,3.6,7.3
+																		C2.5,10.3,13.1,20.6,13.1,21l0,0c0-0.4,10.6-10.7,12.4-12.7c1.8-2,3.6-5,3.6-7.3C29.1-3.4,26.4-7.2,20.7-7.2z"></path>
+																	</svg>
+																</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="tape-mosaic__row tape-mosaic__row_x2">
+													<div class="tape-mosaic__item">
+														<div class="tape-mosaic__body">
+															<a href="#"><img src="images/image2.jpg" alt=""></a>
+															<div class="tape-mosaic__bot">
+																<span class="tape-mosaic__avatar"><img src="images/group_avatar_hb.png" alt=""></span>
+																<span class="tape-mosaic__name">HotelsBroker</span>
+																<span class="tape-mosaic__fav" onclick="$(this).toggleClass('active');">
+																	<svg class="icon" version="1.1" viewBox="-6.9 -13.1 40 40" x="0px" y="0px">
+																		<path class="shape" d="M20.7-7.2c-5.8,0-7.6,4.3-7.6,4.3l0,0c0,0-1.8-4.3-7.6-4.3s-8.4,3.7-8.4,8.1c0,2.2,1.8,5.2,3.6,7.3
+																		C2.5,10.3,13.1,20.6,13.1,21l0,0c0-0.4,10.6-10.7,12.4-12.7c1.8-2,3.6-5,3.6-7.3C29.1-3.4,26.4-7.2,20.7-7.2z"></path>
+																	</svg>
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="tape-mosaic__item">
+														<div class="tape-mosaic__body">
+															<a href="#"><img src="images/wfff.jpg" alt=""></a>
+															<div class="tape-mosaic__bot">
+																<span class="tape-mosaic__avatar"><img src="images/_img_180x180.jpg" alt=""></span>
+																<span class="tape-mosaic__name">Виктор Васильев</span>
+																<span class="tape-mosaic__fav" onclick="$(this).toggleClass('active');">
+																	<svg class="icon" version="1.1" viewBox="-6.9 -13.1 40 40" x="0px" y="0px">
+																		<path class="shape" d="M20.7-7.2c-5.8,0-7.6,4.3-7.6,4.3l0,0c0,0-1.8-4.3-7.6-4.3s-8.4,3.7-8.4,8.1c0,2.2,1.8,5.2,3.6,7.3
+																		C2.5,10.3,13.1,20.6,13.1,21l0,0c0-0.4,10.6-10.7,12.4-12.7c1.8-2,3.6-5,3.6-7.3C29.1-3.4,26.4-7.2,20.7-7.2z"></path>
+																	</svg>
+																</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="tape-mosaic__row tape-mosaic__row_x3">
+													<div class="tape-mosaic__item">
+														<div class="tape-mosaic__body">
+															<a href="#"><img src="images/image4.jpg" alt=""></a>
+															<div class="tape-mosaic__bot">
+																<span class="tape-mosaic__avatar"><img src="i/_180x180.jpg" alt=""></span>
+																<span class="tape-mosaic__name">Виктор Васильев</span>
+																<span class="tape-mosaic__fav" onclick="$(this).toggleClass('active');">
+																	<svg class="icon" version="1.1" viewBox="-6.9 -13.1 40 40" x="0px" y="0px">
+																		<path class="shape" d="M20.7-7.2c-5.8,0-7.6,4.3-7.6,4.3l0,0c0,0-1.8-4.3-7.6-4.3s-8.4,3.7-8.4,8.1c0,2.2,1.8,5.2,3.6,7.3
+																		C2.5,10.3,13.1,20.6,13.1,21l0,0c0-0.4,10.6-10.7,12.4-12.7c1.8-2,3.6-5,3.6-7.3C29.1-3.4,26.4-7.2,20.7-7.2z"></path>
+																	</svg>
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="tape-mosaic__item">
+														<div class="tape-mosaic__body">
+															<a href="#"><img src="images/blog-el3.jpg" alt=""></a>
+															<div class="tape-mosaic__bot">
+																<span class="tape-mosaic__avatar"><img src="i/_180x180.jpg" alt=""></span>
+																<span class="tape-mosaic__name">Виктор Васильев</span>
+																<span class="tape-mosaic__fav" onclick="$(this).toggleClass('active');">
+																	<svg class="icon" version="1.1" viewBox="-6.9 -13.1 40 40" x="0px" y="0px">
+																		<path class="shape" d="M20.7-7.2c-5.8,0-7.6,4.3-7.6,4.3l0,0c0,0-1.8-4.3-7.6-4.3s-8.4,3.7-8.4,8.1c0,2.2,1.8,5.2,3.6,7.3
+																		C2.5,10.3,13.1,20.6,13.1,21l0,0c0-0.4,10.6-10.7,12.4-12.7c1.8-2,3.6-5,3.6-7.3C29.1-3.4,26.4-7.2,20.7-7.2z"></path>
+																	</svg>
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="tape-mosaic__item tape-mosaic__item_last">
+														<div class="tape-mosaic__body">
+															<img src="images/image1.jpg" alt="">
+															<a href="#" class="tile__cap">
+																<div class="tile__cap-content">
+																	<i class="icons icons_camera_white"></i>
+																	<div class="tile__cap-text">Все фотографии</div>
+																	<div class="tile__cap-text">804</div>
+																</div>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="text">Этой зимой он работает с 14 по 22 февраля. Даты приурочены к школьным каникулам в Финляндии. «Страна муми-троллей», «Muumimaailma», в Финляндии входит в десятку лучших тематических парков мира, хотя работает всего три месяца в году. Этой зимой он работает с 14 по 22 февраля. Даты приурочены к школьным каникулам в Финляндии. </div>
+											<a href="#" class="link">Смотреть все фотографии альбома <span>232 112</span></a>
+										</div>
+										<ul class="tape-bot">
+											<li class="tape-bot__item tape-bot__item_share">
+												<div class="action-group-link">
+													<span class="action-link action-link_share" onclick="$(this).toggleClass('active')">
+														<i class="icon icon_share_blue"></i>
+														<i class="icon icon_share_bluesky"></i>
+													</span>
+													<div class="action-share">
+														<div class="action-share__item">
+															<div class="action-share__field">
+																<input type="text" class="action-share__input" value="http://www.rutraveller.ru/12457892" onclick="$(this).select();">
+																<i class="icon icon_copy_blue"></i>
+															</div>
+														</div>
+														<div class="action-share__item">
+															<a href="#"><i class="icon icon_fb_blue"></i></a>
+														</div>
+														<div class="action-share__item">
+															<a href="#"><i class="icon icon_vk_blue"></i></a>
+														</div>
+														<div class="action-share__item">
+															<a href="#"><i class="icon icon_ok_blue"></i></a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="tape-bot__item">
+												<a href="javascript:void(0)" class="action-link action-link_like js-fav">
+													<i class="icons icons_heart_darkcyan"></i>
+													<span class="action-link__text">120</span>
+												</a>
+											</li>
+											<li class="tape-bot__item">
+												<a href="#" class="action-link action-link_view">
+													<i class="icons icons_eye_gray"></i>
+													<span class="action-link__text">125</span>
+												</a>
+											</li>
+											<li class="tape-bot__item">
+												<a href="#" class="action-link action-link_fav">
+													<i class="icons icons_bookmark-min_gray"></i>
+													<span class="action-link__text">В избранное</span>
+												</a>
+											</li>
+											<li class="tape-bot__item">
+												<a href="#" class="action-link  action-link_comment  js-show-comments">
+													<i class="icons icons_cloud-min_gray"></i>
+													<span class="action-link__text">Комментариев <span class="gray">21</span></span>
+												</a>
+											</li>
+										</ul>
+										<div class="tape-comments">
+											<div class="tape-comments__item">
+												<div class="tape-comments__head clearfix">
+													<a href="#" class="user-photo"><img src="images/6m.jpg" alt=""></a>
+													<a href="#" class="tape-comments__username">Анастасия Завермах</a>
+													<div class="tape-comments__date">30 августа 2014 в 20:54</div>
+												</div>
+												<div class="tape-comments__text">Выбирайте отель где крытый или бассейн с подогревом например </div>
+											</div>
+											<div class="tape-comments__item">
+												<div class="tape-comments__head clearfix">
+													<a href="#" class="user-photo"><img src="i/abs.png" alt=""></a>
+													<a href="#" class="tape-comments__username">ЛевАноним#2</a>
+													<div class="tape-comments__date">30 августа 2014 в 20:54</div>
+												</div>
+												<div class="tape-comments__text">Были в июне, днём было даже до +47, но море всё равно до +30 еще не прогрелось. И потом, разные бывают обстоятельства, кто-то по финансовым соображениям не может поехать в высокий сезон, у кого-то здоровье не позволяет ездить на юг в августе, так что каждый решает сам, когда ему ехать и при какой температуре купаться.</div>
+											</div>
+											<div class="tape-comments__item">
+												<div class="tape-comments__head clearfix">
+													<a href="#" class="user-photo"><img src="images/photo60x60_1.jpg" alt=""></a>
+													<a href="#" class="tape-comments__username">Виталий Михайлович</a>
+													<div class="tape-comments__date">30 августа 2014 в 20:54</div>
+												</div>
+												<div class="tape-comments__text">Спасибо!</div>
+											</div>
+											<div class="tape-form clearfix">
+												<a href="#" class="user-photo"><img src="i/abs.png" alt=""></a>
+												<div class="tape-form__field">
+													<textarea class="tape-form__textarea" placeholder="Написать комментарий"></textarea>
+													<div class="tape-form__actions">
+														<a href="javascript:void(0)" class="tape-form__actions-item"><i class="icons icons_camera-min_darkcyan"></i></a>
+													</div>
+												</div>
+												<input type="submit" class="tape-form__submit" value="Отправить">
+											</div>
+										</div>
+									</div>
+									<div class="tape-item">
+										<div class="tape-item__action-right">
+											<div class="action-group-link">
+												<span class="action-link action-link_options" onclick="$(this).toggleClass('active')">
+													<i class="icon icon_dots"></i>
+													<i class="icon icon_dots_bluesky"></i>
+												</span>
+												<div class="action-options">
+													<div class="action-options__item"><a href="#" class="link">Это не интересно</a></div>
+													<div class="action-options__item"><a href="#" class="link">Пожаловаться</a></div>
+												</div>
+											</div>
+										</div>
+										<div class="user-board clearfix">
+											<a href="#" class="user-photo"><img src="i/abs.png" alt=""></a>
+											<div class="user-info">
+												<div class="user-info__head">
+													<a href="#" class="user-info__username">ЛевАноним#2</a>
+													<span class="user-info__info">добавил(а) 38 фотографий <a href="#">Саграда Фамилия</a></span>
+												</div>
+												<div class="user-info__date">30 августа 2014 в 20:54</div>
+											</div>
+										</div>
+										<ul class="tape-tags">
+											<li class="tape-tags__tag"><i class="icon icon_tag"></i></li>
+											<li class="tape-tags__item"><a href="#" class="link">Путешествия</a></li>
+											<li class="tape-tags__item"><a href="#" class="link">Финляндия</a></li>
+											<li class="tape-tags__item"><a href="#" class="link">Фотографии</a></li>
+											<li class="tape-tags__item"><a href="#" class="link">Туризм</a></li>
+										</ul>
+										<div class="title"><h2 class="title-h2">Страна муми-троллей</h2></div>
+										<div class="tape-post">
+											<div class="tape-picture">
+												<a href="#"><img src="images/tgb.jpg" alt=""></a>
+												<div class="tape-mosaic__bot">
+													<span class="tape-mosaic__avatar"><img src="images/group_avatar_hb.png" alt=""></span>
+													<span class="tape-mosaic__name">HotelsBroker</span>
+													<span class="tape-mosaic__fav" onclick="$(this).toggleClass('active');">
+														<svg class="icon" version="1.1" viewBox="-6.9 -13.1 40 40" x="0px" y="0px">
+															<path class="shape" d="M20.7-7.2c-5.8,0-7.6,4.3-7.6,4.3l0,0c0,0-1.8-4.3-7.6-4.3s-8.4,3.7-8.4,8.1c0,2.2,1.8,5.2,3.6,7.3
+															C2.5,10.3,13.1,20.6,13.1,21l0,0c0-0.4,10.6-10.7,12.4-12.7c1.8-2,3.6-5,3.6-7.3C29.1-3.4,26.4-7.2,20.7-7.2z"></path>
+														</svg>
+													</span>
+												</div>
+											</div>
+											<div class="text text_desc">Далеко-далеко за словесными горами в стране, глеасных.</div>
+											<div class="text text_subtitle">«Страна муми-троллей», «Muumimaailma», в Финляндии входит в десятку лучших тематических парков мира, хотя работает всего три месяца в году.</div>
+											<div class="text">Этой зимой он работает с 14 по 22 февраля. Даты приурочены к школьным каникулам в Финляндии. «Страна муми-троллей», «Muumimaailma», в Финляндии входит в десятку лучших тематических парков мира, хотя работает всего три месяца в году. Этой зимой он работает с 14 по 22 февраля. Даты приурочены к школьным каникулам в Финляндии. </div>
+											<a href="#" class="link">Читать дальше</a>
+										</div>
+										<ul class="tape-bot">
+											<li class="tape-bot__item tape-bot__item_share">
+												<div class="action-group-link">
+													<span class="action-link action-link_share" onclick="$(this).toggleClass('active')">
+														<i class="icon icon_share_blue"></i>
+														<i class="icon icon_share_bluesky"></i>
+													</span>
+													<div class="action-share">
+														<div class="action-share__item">
+															<div class="action-share__field">
+																<input type="text" class="action-share__input" value="http://www.rutraveller.ru/12457892" onclick="$(this).select();">
+																<i class="icon icon_copy_blue"></i>
+															</div>
+														</div>
+														<div class="action-share__item">
+															<a href="#"><i class="icon icon_fb_blue"></i></a>
+														</div>
+														<div class="action-share__item">
+															<a href="#"><i class="icon icon_vk_blue"></i></a>
+														</div>
+														<div class="action-share__item">
+															<a href="#"><i class="icon icon_ok_blue"></i></a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="tape-bot__item">
+												<a href="javascript:void(0)" class="action-link action-link_like js-fav">
+													<i class="icons icons_heart_darkcyan"></i>
+													<span class="action-link__text">120</span>
+												</a>
+											</li>
+											<li class="tape-bot__item">
+												<a href="#" class="action-link action-link_view">
+													<i class="icons icons_eye_gray"></i>
+													<span class="action-link__text">125</span>
+												</a>
+											</li>
+											<li class="tape-bot__item">
+												<a href="#" class="action-link action-link_fav">
+													<i class="icons icons_bookmark-min_gray"></i>
+													<span class="action-link__text">В избранное</span>
+												</a>
+											</li>
+											<li class="tape-bot__item">
+												<a href="#" class="action-link  action-link_comment  js-show-comments">
+													<i class="icons icons_cloud-min_gray"></i>
+													<span class="action-link__text">Комментариев <span class="gray">21</span></span>
+												</a>
+											</li>
+										</ul>
+										<div class="tape-comments">
+											<div class="tape-comments__item">
+												<div class="tape-comments__head clearfix">
+													<a href="#" class="user-photo"><img src="images/6m.jpg" alt=""></a>
+													<a href="#" class="tape-comments__username">Анастасия Завермах</a>
+													<div class="tape-comments__date">30 августа 2014 в 20:54</div>
+												</div>
+												<div class="tape-comments__text">Выбирайте отель где крытый или бассейн с подогревом например </div>
+											</div>
+											<div class="tape-comments__item">
+												<div class="tape-comments__head clearfix">
+													<a href="#" class="user-photo"><img src="i/abs.png" alt=""></a>
+													<a href="#" class="tape-comments__username">ЛевАноним#2</a>
+													<div class="tape-comments__date">30 августа 2014 в 20:54</div>
+												</div>
+												<div class="tape-comments__text">Были в июне, днём было даже до +47, но море всё равно до +30 еще не прогрелось. И потом, разные бывают обстоятельства, кто-то по финансовым соображениям не может поехать в высокий сезон, у кого-то здоровье не позволяет ездить на юг в августе, так что каждый решает сам, когда ему ехать и при какой температуре купаться.</div>
+											</div>
+											<div class="tape-comments__item">
+												<div class="tape-comments__head clearfix">
+													<a href="#" class="user-photo"><img src="images/photo60x60_1.jpg" alt=""></a>
+													<a href="#" class="tape-comments__username">Виталий Михайлович</a>
+													<div class="tape-comments__date">30 августа 2014 в 20:54</div>
+												</div>
+												<div class="tape-comments__text">Спасибо!</div>
+											</div>
+											<div class="tape-form clearfix">
+												<a href="#" class="user-photo"><img src="i/abs.png" alt=""></a>
+												<div class="tape-form__field">
+													<textarea class="tape-form__textarea" placeholder="Написать комментарий"></textarea>
+													<div class="tape-form__actions">
+														<a href="javascript:void(0)" class="tape-form__actions-item"><i class="icons icons_camera-min_darkcyan"></i></a>
+													</div>
+												</div>
+												<input type="submit" class="tape-form__submit" value="Отправить">
+											</div>
+										</div>
+									</div>
+									<div class="tape-item">
+										<div class="tape-item__action-right tape-item__action-right_share">
+											<div class="action-group-link">
+												<span class="action-link action-link_share" onclick="$(this).toggleClass('active')">
+													<i class="icon icon_share_blue"></i>
+													<i class="icon icon_share_bluesky"></i>
+												</span>
+												<div class="action-share">
+													<div class="action-share__item">
+														<div class="action-share__field">
+															<input type="text" class="action-share__input" value="http://www.rutraveller.ru/12457892" onclick="$(this).select();">
+															<i class="icon icon_copy_blue"></i>
+														</div>
+													</div>
+													<div class="action-share__item">
+														<a href="#"><i class="icon icon_fb_blue"></i></a>
+													</div>
+													<div class="action-share__item">
+														<a href="#"><i class="icon icon_vk_blue"></i></a>
+													</div>
+													<div class="action-share__item">
+														<a href="#"><i class="icon icon_ok_blue"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="user-board clearfix">
+											<a href="#" class="user-photo"><img src="i/abs.png" alt=""></a>
+											<div class="user-info">
+												<div class="user-info__head">
+													<a href="#" class="user-info__username">ЛевАноним#2</a>
+													<span class="user-info__info">был(а) с коллегами по работе в апреле 2014</span>
+												</div>
+												<div class="user-info__date">30 августа 2014 в 20:54</div>
+											</div>
+										</div>
+										<div class="title">
+											<h2 class="title-h2">Саграда Фаилия</h2>
+											<a href="#" class="title-rate">
+												<div class="icon icon_rt"></div>
+												<div class="text">Хорошо, <span class="num">4.47<span class="num_min">/5</span></span></div>
+											</a>
+										</div>
+										<div class="tape-post">
+											<div class="evaluation__items clearfix">
+												<div class="evaluation__item">
+													<div class="evaluation__label">Историческая ценность</div>
+													<div class="evaluation__bar high">
+														<div class="evaluation__bar-text">Хорошо, 4.3</div>
+														<div class="evaluation__bar-line" style="width: 77%;">
+															<div class="evaluation__bar-text">Хорошо, 4.3</div>
+														</div>
+													</div>
+												</div>
+												<div class="evaluation__item">
+													<div class="evaluation__label">Внешнее состояние</div>
+													<div class="evaluation__bar high">
+														<div class="evaluation__bar-text">Хорошо, 4.5</div>
+														<div class="evaluation__bar-line" style="width: 82%;">
+															<div class="evaluation__bar-text">Хорошо, 4.5</div>
+														</div>
+													</div>
+												</div>
+												<div class="evaluation__item">
+													<div class="evaluation__label">Посещение</div>
+													<div class="evaluation__bar mid">
+														<div class="evaluation__bar-text">Средне, 3.9</div>
+														<div class="evaluation__bar-line" style="width: 65%;">
+															<div class="evaluation__bar-text">Средне, 3.9</div>
+														</div>
+													</div>
+												</div>
+												<div class="evaluation__item">
+													<div class="evaluation__label">Архитектура</div>
+													<div class="evaluation__bar high">
+														<div class="evaluation__bar-text">Хорошо, 4.0</div>
+														<div class="evaluation__bar-line" style="width: 75%;">
+															<div class="evaluation__bar-text">Хорошо, 4.0</div>
+														</div>
+													</div>
+												</div>
+												<div class="evaluation__item">
+													<div class="evaluation__label">Транспортная доступность</div>
+													<div class="evaluation__bar low">
+														<div class="evaluation__bar-text">Плохо, 2.5</div>
+														<div class="evaluation__bar-line" style="width: 15%;">
+															<div class="evaluation__bar-text">Плохо, 2.5</div>
+														</div>
+													</div>
+												</div>
+												<div class="evaluation__item">
+													<div class="evaluation__label">Загруженность</div>
+													<div class="evaluation__bar mid">
+														<div class="evaluation__bar-text">Средне, 3.6</div>
+														<div class="evaluation__bar-line" style="width: 55%;">
+															<div class="evaluation__bar-text">Средне, 3.6</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="btn-more">Показать ещё</div>
+								</div>
+							</div>
+							<div class="place-section" id="map">
+								<div class="title title_onmap">
+									<h2 class="title-h2">Карта</h2>
+									<a href="#" class="link">смотреть панораму</a>
+								</div>
+								<div class="onmap">
+									<div class="onmap__map"><img src="images/map.png" alt=""></div>
+									<div class="onmap-info">
+										<div class="onmap-info__row">
+											<div class="onmap-info__item">
+												<div class="onmap-info__label">Адрес:</div>
+												<div class="onmap-info__text">Carrer de Mallorca, 401, 08013 Barcelona, Испания</div>
+											</div>
+											<div class="onmap-info__item">
+												<div class="onmap-info__label">Телефон:</div>
+												<div class="onmap-info__text">+34 935 13 20 60</div>
+											</div>
+											<div class="onmap-info__item">
+												<div class="onmap-info__label">Сайт:</div>
+												<div class="onmap-info__text"><a href="#">sagradafamilia.cat</a></div>
+											</div>
+										</div>
+										<div class="onmap-info__row">
+											<div class="onmap-info__item">
+												<div class="onmap-info__label">Режим работы:</div>
+												<div class="onmap-info__text">ПН-ВС с 9:00 до 18:00, в летний период - до 20:00.</div>
+											</div>
+										</div>
+										<div class="onmap-info__row">
+											<div class="onmap-info__item">
+												<div class="onmap-info__label">Стоимость посещения:</div>
+												<div class="onmap-info__text">12,50 евро (с гидом или аудиогидом - 16,50 евро); <br>		студенты, пенсионеры, дети 10—18 лет - 10,50 евро (с гидом или аудиогидом - 13,50 евро). </div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col col_right">
+							<div class="teast"></div>
+							<div class="teast"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer-form">
+				<div class="footer-form__item">
+					<div class="footer-form__text">Подпишитесь на нашу <a hreef="#">рассылку</a> и получайте самую <br> актуальную информацию о путешествиях</div>
+				</div>
+				<div class="footer-form__item">
+					<input type="text" class="footer-form__input" placeholder="Подписаться">
+					<input type="submit" class="footer-form__submit" value="Подписаться">
+				</div>
+				<div class="footer-form__item">
+					<a href="#" class="footer-form__social"><i class="icon icon_fb_gray"></i></a>
+					<a href="#" class="footer-form__social"><i class="icon icon_vk_gray"></i></a>
+					<a href="#" class="footer-form__social"><i class="icon icon_ok_gray"></i></a>
+					<a href="#" class="footer-form__social"><i class="icon icon_insta_gray"></i></a>
+				</div>
+			</div>
+			<div class="footer-line-gradient"></div>
+			<div class="footer-content">
+				<div class="footer-content__row hide-responsive_768">
+					<div class="footer-content__item">
+						<div class="footer-content__title">Экскурсионный бюро</div>
+						<div class="footer-content__text">Мы предлагаем Вам размещение профиля бюро, улобный личный кабинет и прямой контакт с туристами</div>
+					</div>
+					<div class="footer-content__item">
+						<div class="footer-content__title">Гидам</div>
+						<div class="footer-content__text">Мы не берём комиссий за продажи ваших услуг и даёт возможность прямого контакта с туристом</div>
+					</div>
+					<div class="footer-content__item">
+						<div class="footer-content__title">Владельцам мест</div>
+						<div class="footer-content__text">Продвижение профиля мест на RuTraveller откроет вас для миллионов российских путешественников</div>
+					</div>
+					<div class="footer-content__item">
+						<div class="footer-content__title">Путешественникам</div>
+						<div class="footer-content__text">Регистрируйтесь на RuTraveller и изучайте мир вместе с нами. У нас есть всё, из чего 	состоит путешествие</div>
+					</div>
+				</div>
+				<div class="footer-content__row hide-responsive_768">
+					<div class="footer-content__item">
+						<div class="footer-content__counter">15 000 000 +</div>
+						<div class="footer-content__desc">путешественников доверяют RuTraveller хранить память о своих путешествиях</div>
+					</div>
+					<div class="footer-content__item footer-content__item_large">
+						<div class="footer-content__text"><p class="footer-content__text-row">RuTraveller – это гид по городам и странам для путешественников, фотографов и знатоков туризма. У нас есть всё, из чего состоит путешествие: яркие фото изо всех уголков мира, рассказы о поездках, ответы на любые вопросы.</p> Храните привезённые вами впечатления и воспоминания в виде фотографий и отчётов, участвуйте в конкурсах на звание фотографа недели, узнавайте новое о городах и странах, планируйте отпуск и, наконец, заводите новых друзей вместе с RuTraveller. </div>
+					</div>
+				</div>
+				<div class="footer-content__row">
+					<ul class="footer-nav">
+						<li class="footer-nav__item"><a href="#" class="footer-nav__link">О проекте</a></li>
+						<li class="footer-nav__item"><a href="#" class="footer-nav__link">Реклама</a></li>
+						<li class="footer-nav__item"><a href="#" class="footer-nav__link">Модули для турсайтов</a></li>
+						<li class="footer-nav__item"><a href="#" class="footer-nav__link">Новости</a></li>
+						<li class="footer-nav__item"><a href="#" class="footer-nav__link">Связаться</a></li>
+						<li class="footer-nav__item"><a href="#" class="footer-nav__link">Вакансии</a></li>
+						<li class="footer-nav__item"><a href="#" class="footer-nav__link">Правила</a></li>
+						<li class="footer-nav__icon"><i class="icon icon_18p"></i></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-rights">
+				© RuTraveller, 2003-2017. Все права защищены.
+			</div>
+		</footer>
+		<div class="suggest">
+			<div class="suggest__wrapper">
+				<div class="suggest__content">
+					<div class="suggest__item">
+						<a href="#" class="suggest__title">Страны и города <span class="suggest__count">43</span></a>
+						<div class="suggest__list">
+							<a href="#" class="suggest__list-item">
+								<div class="suggest__list-col">
+									<div class="suggest__list-name"><span class="suggest__found">Ника</span>рагуа</div>
+									<div class="suggest__list-place">Греция, Салоники, Центральная Македония</div>
+								</div>
+							</a>
+							<a href="#" class="suggest__list-item">
+								<div class="suggest__list-col">
+									<div class="suggest__list-name">Доми<span class="suggest__found">ника</span>на</div>
+								</div>
+							</a>
+							<a href="#" class="suggest__list-item">
+								<div class="suggest__list-col">
+									<div class="suggest__list-name">Санта Мо<span class="suggest__found">ника</span></div>
+									<div class="suggest__list-place">США, Лос-Анджелес (Калифорния), Штат Калифорния</div>
+								</div>
+							</a>
+							<a href="#" class="suggest__list-item">
+								<div class="suggest__list-col">
+									<div class="suggest__list-name">Провинция Ма<span class="suggest__found">ника</span>ланд</div>
+									<div class="suggest__list-place">Греция, Салоники, Центральная Македония</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="suggest__item">
+						<a href="#" class="suggest__title">Места <span class="suggest__count">278</span></a>
+						<div class="suggest__list suggest__list_has-photo">
+							<a href="#" class="suggest__list-item">
+								<div class="suggest__list-col  suggest__list-col_photo">
+									<div class="suggest__list-photo" style="background-image: url(images/travels-cont-td-hover8.jpg);"></div>
+								</div>
+								<div class="suggest__list-col">
+									<div class="suggest__list-name"><span class="suggest__found">Ника</span>рагуа</div>
+									<div class="suggest__list-place">Греция, Салоники, Центральная Македония</div>
+								</div>
+							</a>
+							<a href="#" class="suggest__list-item">
+								<div class="suggest__list-col  suggest__list-col_photo">
+									<div class="suggest__list-photo" style="background-image: url(images/blog-el3.jpg);"></div>
+								</div>
+								<div class="suggest__list-col">
+									<div class="suggest__list-name">Доми<span class="suggest__found">ника</span>на</div>
+								</div>
+							</a>
+							<a href="#" class="suggest__list-item">
+								<div class="suggest__list-col  suggest__list-col_photo">
+									<div class="suggest__list-photo" style="background-image: url(images/travels-cont-td-hover4.jpg);"></div>
+								</div>
+								<div class="suggest__list-col">
+									<div class="suggest__list-name">Санта Мо<span class="suggest__found">ника</span></div>
+									<div class="suggest__list-place">США, Лос-Анджелес (Калифорния), Штат Калифорния</div>
+								</div>
+							</a>
+							<a href="#" class="suggest__list-item">
+								<div class="suggest__list-col  suggest__list-col_photo">
+									<div class="suggest__list-photo" style="background-image: url(images/_img_735_1.jpg);"></div>
+								</div>
+								<div class="suggest__list-col">
+									<div class="suggest__list-name">Провинция Ма<span class="suggest__found">ника</span>ланд</div>
+									<div class="suggest__list-place">Греция, Салоники, Центральная Македония</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="suggest__item">
+						<a href="#" class="suggest__title">Все результаты поиска <span class="suggest__count">450</span></a>
+						<div class="suggest__tags">
+							<div class="suggest__tags-col">
+								<a href="#" class="suggest__tags-item">Страны <span class="suggest__count">6</span></a>
+								<a href="#" class="suggest__tags-item">Города и курорты <span class="suggest__count">18</span></a>
+								<a href="#" class="suggest__tags-item">Места <span class="suggest__count">680</span></a>
+							</div>
+							<div class="suggest__tags-col">
+								<a href="#" class="suggest__tags-item">Экскурсии <span class="suggest__count">3</span></a>
+								<a href="#" class="suggest__tags-item">Путешественники <span class="suggest__count">680</span></a>
+								<a href="#" class="suggest__tags-item">Улицы <span class="suggest__count">3</span></a>
+							</div>
+							<div class="suggest__tags-col">
+								<a href="#" class="suggest__tags-item">Заметки <span class="suggest__count">6</span></a>
+								<a href="#" class="suggest__tags-item">Вопросы <span class="suggest__count">18</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup-am">
+		<div class="popup-am__head">
+			<div class="popup-am__ttl">Добавление материалов на сайт</div class="popup-am__ttl">
+			<button class="popup-am__close"></button>
+		</div>
+		<div class="popup-am__list">
+			<a href="#" class="popup-am__item">
+				<i class="icon-camera"></i>
+				<strong>Фотографии</strong> 
+				из поездки
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-location"></i>
+				<strong>Место</strong> 
+				в каталог достопримечательностей
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-check"></i>
+				<strong>Отметиться в местах</strong> 
+			 	, где вы были
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-check"></i>
+				<strong>Отметиться в городах и курортах</strong> 
+			 	, где вы были
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-comment"></i>
+				<strong>Отзыв</strong> 
+			 	о городе/курорте
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-lamp"></i>
+				<strong>Совет</strong> 
+			 	для туристов о городе/курорте/месте
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-help"></i>
+				<strong>Вопрос</strong> 
+			 	об интересующем вас направлении
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-docs"></i>
+				<strong>Заметку</strong> 
+			 	о путешествии
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-book-open"></i>
+				<strong>Дневник</strong> 
+			 	вашего путешествия
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-calendar"></i>
+				<strong>Событие</strong> 
+			 	фестиваль, парад, выставку...
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-map"></i>
+				<strong>Маршрут</strong> 
+			 	по городу
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-list-add"></i>
+				<strong>Запись в сообщество</strong> 
+			 	о чем-нибудь интересном
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-star"></i>
+				<strong>Оценку</strong> 
+			 	городам и курортам где вы были
+			</a>
+			<a href="#" class="popup-am__item">
+				<i class="icon-users"></i>
+				<strong>Анкету</strong> 
+			 	о себе и ваших интересах
+			</a>
+		</div>
+	</div>
+	<div id="overlay" style="display: none; top: 0; left: 0; background: rgba(0,0,0,.5);">
+		<div class="auth-form-close"></div>
+	</div>
+	<div class="auth-popup" style="display: none;">
+		<div class="auth-form auth-form_optimally">
+			<div class="auth-form__head">
+				<div class="auth-form__logo"></div>
+			</div>
+			<div class="auth-form__body auth-form__body_step1">
+				<div class="auth-form__top">
+					<div class="auth-form__title">Вход в личный кабинет</div>
+					<a href="registration.html" class="auth-form__link auth-form__link_right">Регистрация</a>
+				</div>
+				<div class="auth-form__item">
+					<div class="auth-form__field">
+						<label for="" class="auth-form__label">Электронная почта</label>
+						<input type="text" class="auth-form__input" placeholder="Введите ваш e-mail">
+						<div class="auth-form__message">Данный элекронный адрес не зарегистрирован</div>
+					</div>
+				</div>
+				<div class="auth-form__item">
+					<div class="auth-form__field">
+						<i class="auth-form__eye" onclick="$(this).toggleClass('active');"></i>
+						<label for="" class="auth-form__label">Пароль</label>
+						<input type="text" class="auth-form__input" placeholder="Введите пароль">
+						<div class="auth-form__message">Пароль неверный. Осталось 3 попытки</div>
+					</div>
+				</div>
+				<div class="auth-form__item">
+					<div class="auth-form__field">
+						<label class="auth-form__checked">
+							<input type="checkbox">
+							Запомнить меня
+						</label>
+						<a href="#" class="auth-form__link auth-form__link_right">Забыли пароль?</a>
+					</div>
+				</div>
+				<div class="auth-form__item auth-form__item_submit">
+					<div class="auth-form__field">
+						<input type="submit" class="auth-form__submit js-validate" value="войти">
+					</div>
+				</div>
+				<div class="auth-form__item">
+					<div class="auth-form__field">
+						<button class="auth-form__submit auth-form__submit_tophotels js-next-step">войти через <span class="auth-form__th"></span></button>
+					</div>
+				</div>
+			</div>
+			<div class="auth-form__body auth-form__body_step2" style="display: none;">
+				<div class="auth-form__top">
+					<div class="auth-form__title">Вход через <span class="auth-form__th"></span></div>
+					<a href="registration.html" class="auth-form__link auth-form__link_right">Регистрация</a>
+				</div>
+				<div class="auth-form__item">
+					<div class="auth-form__field">
+						<label for="" class="auth-form__label">Электронная почта</label>
+						<input type="text" class="auth-form__input" placeholder="Введите ваш e-mail">
+						<div class="auth-form__message">Данный элекронный адрес не зарегистрирован</div>
+					</div>
+				</div>
+				<div class="auth-form__item">
+					<div class="auth-form__field">
+						<i class="auth-form__eye" onclick="$(this).toggleClass('active');"></i>
+						<label for="" class="auth-form__label">Пароль</label>
+						<input type="text" class="auth-form__input" placeholder="Введите пароль">
+						<div class="auth-form__message">Пароль неверный. Осталось 3 попытки</div>
+					</div>
+				</div>
+				<div class="auth-form__item">
+					<div class="auth-form__field">
+						<label class="auth-form__checked">
+							<input type="checkbox">
+							Запомнить меня
+						</label>
+						<a href="#" class="auth-form__link auth-form__link_right">Забыли пароль?</a>
+					</div>
+				</div>
+				<div class="auth-form__item auth-form__item_submit">
+					<div class="auth-form__field">
+						<input type="submit" class="auth-form__submit auth-form__submit_green js-validate" value="войти">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="responsive-tester">
+		<div>Ширина</div>
+		<a href="#" class="js-viewport_1024">1024</a> <br>
+		<a href="#" class="js-viewport_1260">1260</a>
+	</div>
+
+	<!-- scripts -->
+	<script type="text/javascript" src="js/vendor/jquery-2.1.4.js" ></script>
+	<script type="text/javascript" src="js/layouts/header.js" ></script>
+	<script type="text/javascript" src="js/components/common.js" ></script>
+	<script type="text/javascript" src="js/pages/registration/registration.js" ></script>
+	<script type="text/javascript" src="js/pages/place/place.js" ></script>
+	<script type="text/javascript" src="js/blocks/searchbar.js" ></script>
+	<script type="text/javascript" src="js/blocks/popup-add-material.js" ></script>
+	<script type="text/javascript" src="js/blocks/popup-nav.js" ></script>
+	<script type="text/javascript" src="js/main.js" ></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import '../variables';
+
+.left-nav {
+	position: fixed;
+	top: 50%;
+	width: 20px;
+	margin-left: -55px;
+	-webkit-backface-visibility: hidden;
+    -webkit-transform: translateY(-50%) translateZ(0) scale(1.0, 1.0);
+    transform: translateY(-50%) translateZ(0) scale(1.0, 1.0);
+    z-index: 100;
+    &_top {
+    	top: 93px;
+    	margin-left: -75px;
+   		transform: translateY(0) translateZ(0) scale(1.0, 1.0);
+    }
+	&__mouse {
+		width: 18px;
+		height: 42px;
+		background: url(../i/mouse.png) no-repeat center center;
+		transition: transform 1s;
+		-webkit-animation: moveHint 1s infinity;
+		-o-animation: moveHint 1s infinite;
+		animation: moveHint 1s infinite;
+	}
+	&__link {
+		position: relative;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		vertical-align: middle;
+		display: block;
+		margin-bottom: 20px;
+		text-align: center;
+		&:after {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			border: 2px solid #fff;
+			width: 1px;
+			height: 1px;
+			border-radius: 50%;
+			transition: all .15s;
+		}
+		&:nth-child(2n) {
+			margin-bottom: 40px;
+		}
+		&.active {
+			&:after {
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+	@media(max-width: 1220px) {
+		&_top {
+			margin-left: -55px;
+		}
+	}
+	@media(max-width: 800px) {
+		position: static;
+		margin-left: 0;
+		width: auto;
+		padding: 20px 20px 0;
+	}
+}
+
+@keyframes moveHint {
+	0%		{transform: translateY(-2px);}
+	50%	{transform: translateY(2px);}
+	100%	{transform: translateY(-2px);}
+}

@@ -1,0 +1,13 @@
+/*panton */
+@font-face {
+	font-family: 'panton'; /* Гарнитура шрифта */
+	src: url(../fonts/panton.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+	font-family: 'panton-extrabold'; /* Гарнитура шрифта */
+	src: url(../fonts/PantonExtraBold.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+	font-family: 'panton-bold'; /* Гарнитура шрифта */
+	src: url(../fonts/PantonBold.otf); /* Путь к файлу со шрифтом */
+}

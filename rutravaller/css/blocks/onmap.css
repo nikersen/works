@@ -1,0 +1,30 @@
+.title.title_onmap {
+  padding-bottom: 15px; }
+  .title.title_onmap .title-h2 {
+    margin-right: 5px; }
+
+.onmap__map {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0; }
+  .onmap__map img {
+    min-width: 100%;
+    min-height: 100%; }
+
+.onmap-info {
+  border: 1px solid #C6C6C6;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 20px 20px 23px;
+  font-size: 0; }
+  .onmap-info__item {
+    padding: 7px 0 6px;
+    display: inline-block;
+    margin-right: 40px;
+    font-size: 15px;
+    font-weight: 300; }
+    .onmap-info__item:last-child {
+      margin-right: 0; }
+  .onmap-info__label {
+    margin-bottom: 7px;
+    color: #878787; }

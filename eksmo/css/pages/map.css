@@ -1,0 +1,193 @@
+.map {
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: left;*/
+  font-size: 0; }
+  .map.mosaic {
+    float: none; }
+  .map__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    height: 98px !important;
+    padding: 49px 15px 0;
+    text-decoration: none;
+    text-align: center;
+    transition: border-color .2s, box-shadow .2s; }
+    .map__item:hover {
+      box-shadow: inset 0 0 15px 0px #d4005f;
+      border-color: #d4005f; }
+    .map__item-text {
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #fff;
+      white-space: nowrap; }
+      .map__item-text span {
+        display: block; }
+    .map__item-icon-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 49px;
+      padding-top: 5px;
+      text-align: center; }
+    .map__item-icon {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      display: inline-block;
+      background: url("../../i/map-icons-sprite.png") no-repeat;
+      overflow: hidden;
+      text-indent: -9999px;
+      text-align: left; }
+
+.w-12 {
+  width: 12%; }
+
+.w-14 {
+  width: 14%; }
+
+.w-17 {
+  width: 17%; }
+
+.w-19 {
+  width: 19%; }
+
+.w-20 {
+  width: 20%; }
+
+.w-24 {
+  width: 24%; }
+
+.w-25 {
+  width: 25%; }
+
+.w-31 {
+  width: 31%; }
+
+.map-icon-atom {
+  background-position: -5px -0px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-baby {
+  background-position: -5px -31px;
+  width: 26px;
+  height: 22px; }
+
+.map-icon-car {
+  background-position: -5px -58px;
+  width: 26px;
+  height: 16px; }
+
+.map-icon-chef {
+  background-position: -5px -79px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-commitment {
+  background-position: -5px -110px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-cosmetics {
+  background-position: -5px -141px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-detective {
+  background-position: -5px -172px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-glasses {
+  background-position: -5px -203px;
+  width: 26px;
+  height: 20px; }
+
+.map-icon-map {
+  background-position: -5px -228px;
+  width: 26px;
+  height: 24px; }
+
+.map-icon-medal {
+  background-position: -5px -257px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-piggy-bank {
+  background-position: -5px -288px;
+  width: 26px;
+  height: 25px; }
+
+.map-icon-praying {
+  background-position: -5px -318px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-puzzle {
+  background-position: -5px -349px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-sprout {
+  background-position: -5px -380px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-yin-yan {
+  background-position: -5px -411px;
+  width: 26px;
+  height: 26px; }
+
+.map-icon-mountains {
+  background-position: -5px -442px;
+  width: 25px;
+  height: 25px; }
+
+.map-icon-brush {
+  background-position: -5px -472px;
+  width: 23px;
+  height: 23px; }
+
+.map-icon-leather {
+  background-position: -5px -500px;
+  width: 22px;
+  height: 26px; }
+
+.map-icon-manual-book {
+  background-position: -5px -531px;
+  width: 22px;
+  height: 26px; }
+
+.map-icon-psychology-book {
+  background-position: -5px -562px;
+  width: 22px;
+  height: 26px; }
+
+.map-icon-notebook {
+  background-position: -5px -593px;
+  width: 21px;
+  height: 23px; }
+
+.map-icon-intersex {
+  background-position: -5px -621px;
+  width: 20px;
+  height: 26px; }
+
+.map-icon-medical-result {
+  background-position: -5px -652px;
+  width: 20px;
+  height: 26px; }
+
+.map-icon-syringe {
+  background-position: -5px -683px;
+  width: 10px;
+  height: 26px; }

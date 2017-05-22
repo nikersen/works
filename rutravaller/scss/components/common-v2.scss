@@ -1,0 +1,880 @@
+@import '../variables';
+
+.tags {
+	font-size: 0;
+	margin-bottom: 23px;
+	padding-left: 10px;
+}
+.tags__item {
+	display: inline-block;
+	margin-right: 19px;
+	margin-bottom: 10px;
+}
+.tags__link {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	color: $color-blue;
+	padding: 0 10px;
+	line-height: 29px;
+	font-size: 13px;
+	background: #ECECEC;
+	border-radius: 0 3px 3px 0;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -21px;
+		border-top: 14px solid transparent;
+		border-bottom: 15px solid transparent;
+		border-left: 12px solid transparent;
+		border-right: 9px solid #ECECEC;
+	}
+}
+.tags__link_back {
+	position: relative;
+	padding: 0 10px 0 6px;
+	border-radius: 0 3px 3px 0;
+
+}
+.tags__link_cat {
+	text-transform: uppercase;
+	font-family: $aperBold;
+}
+.tags__link_last {
+	color: #666666;
+	background: #ECECEC;
+}
+@media($mobile) {
+	.tags {display: none;}
+}
+
+/* Информационные элементы (количество просмотров, счетчик мне нравится и т.д.) */
+
+.inform__item {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	color: #bbbbbb;
+	font-size: 12px;
+	margin-right: 17px;
+
+	&:last-child {margin-right: 0;}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: url(../../i/inform-sprite.png) no-repeat;
+	}
+}
+.inform__item_views {
+	padding-left: 16px;
+	
+	&:after {
+		top: 2px;
+		width: 13px;
+		height: 9px;
+		background-position: -25px -3px;
+	}
+}
+.inform__item_users {
+	padding-left: 20px;
+
+	&:after {
+		top: -1px;
+		width: 16px;
+		height: 12px;
+		background-position: 0 0;
+	}
+}
+.inform__item_likes {
+	color: #0f9e56;
+	padding-left: 19px;
+	
+	&:after {
+    width: 15px;
+    height: 12px;
+    background-position: -46px 0;
+	}
+}
+
+/* Кнопка наверх */
+
+.ontop-clickzone {
+	display: block;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 45px;
+	z-index: 1;
+	text-align: right;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .15s ease;
+	&:hover {
+		background: rgba(255,255,255,.6);
+	}
+	&.fixed {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+.ontop-clickzone_show {
+	visibility: visible;
+	opacity: 1;
+}
+.ontop-clickzone_down {
+	& .ontop__icon {
+		-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+}
+.ontop__icon {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	margin-right: -15px;
+	width: 30px;
+	height: 30px;
+	transition: transform .3s ease;
+}
+.ontop__svg {
+	width: 30px;
+	height: 30px;
+	fill: #bbb;
+}
+
+/* Рекламный блок */
+.banner-rt,
+.banner-rt * {box-sizing: border-box;}
+.banner-rt {
+	position: relative;
+	display: block;
+	text-decoration: none;
+	background: url(../../i/banner_pattern.png) repeat top center;
+	max-height: 120px;
+	text-align: center;
+	overflow: hidden;
+
+	&>img {
+		vertical-align: top;
+		height: 100%;
+	}
+	&>div:not(.banner-rt__close) {
+		margin-top: 13px;
+		margin-bottom: 13px;
+		max-height: 94px;
+	}
+	& yatag {margin-left: auto;margin-right: auto;}
+}
+.banner-rt_wrap {padding: 13px 20px;}
+.banner-rt__close {
+	position: absolute;
+	top: 10px;
+	right: 17px;
+	width: 20px;
+	height: 20px;
+	background: url(../../i/icon-close-14x15.png) no-repeat center center;
+}
+@media screen and (max-width: 1365px) {
+	.ontop-clickzone {
+		display: none;
+	}
+}
+@media screen and (min-width: 1599px) {
+	.ontop-clickzone {
+		width: 100px;
+	}
+}
+@media screen and (min-width: 1800px) {
+	.ontop-clickzone {
+		width: 200px;
+	}
+}
+
+/*
+================================
+  Баннер "Индивидуальные гиды"
+================================
+*/
+.banner-guide {
+	position: relative;
+	padding: 17px 0 0;
+    border: 1px solid #c6c6c6;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    height: 428px;
+		-webkit-backface-visibility: hidden;
+    	-webkit-transform: translateZ(0) scale(1.0, 1.0);
+
+    &__title {
+    	padding: 0 10px;
+    	font-size: 19px;
+    	line-height: 22px;
+    	font-weight: 500;
+    	span {
+    		position: relative;
+    		font-weight: 300;
+    		&:after {
+    			content: '';
+    			position: absolute;
+    			bottom: -6px;
+    			border-bottom: 1px solid;
+    			left: 0;
+    			width: 100%;
+    		}
+    	}
+    }
+    &__cube {
+    	position: absolute;
+    	border: 1px solid #fff;
+    	border-radius: 4px;
+    	width: 20px;
+    	height: 20px;
+    	overflow: hidden;
+    	transform: rotate(45deg);
+    	overflow: hidden;
+    	z-index: 2;
+    	&-content {
+    		position: absolute;
+    		width: 100%;
+    		height: 100%;
+    		transform: rotate(-45deg) translateY(-22%);
+    	}
+    	&_photo {
+    		top: 113px;
+    		left: 86px;
+    		margin-left: -53px;
+    		width: 107px;
+    		height: 107px;
+    		.banner-guide__cube-content {
+    			width: 152px;
+    			height: 152px;
+    		}
+    	}
+    	&_green {
+    		top: 223px;
+    		left: 21px;
+    		width: 50px;
+    		height: 50px;
+    		background: #3AAA35;
+    		.banner-guide__cube-content {
+    			width: 67px;
+    			height: 67px;
+    		}
+    	}
+    	&_blue {
+    		top: 202px;
+    		right: 16px;
+    		width: 35px;
+    		height: 35px;
+    		background: $color-blue;
+    		.banner-guide__cube-content {
+    			width: 47px;
+    			height: 47px;
+    		}
+    	}
+    	&_white {
+    		top: 230px;
+    		right: 44px;
+    		width: 35px;
+    		height: 35px;
+    		background: #fff;
+    		.banner-guide__cube-content {
+    			width: 47px;
+    			height: 47px;
+    		}
+    	}
+    	&-num {
+    		position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+    		color: #fff;
+    		.icons {
+    			-webkit-font-smoothing: subpixel-antialiased;
+				transform: scale(2); zoom: 0.5;
+				&_cloud-min_darkcyan {
+					width: 19px;
+					height: 19px;
+					background-position: -813px -505px;
+				}
+    		}
+    	}
+    }
+	&__cover {
+		position: absolute;
+		bottom: -1px;
+		left: -1px;
+		width: 180px;
+		height: 312px;
+		z-index: 1;
+		background: url(../../images/banner_cover.png) no-repeat center center;
+	}
+	&__inform {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		right: 0;
+		padding: 10px;
+		color: #fff;
+		z-index: 2;
+		text-align: center;
+	}
+	&__name {
+		font-size: 15px;
+		line-height: 22px;
+		font-weight: 300;
+		margin-bottom: 24px;
+		strong {
+			display: block;
+			font-weight: 500;
+		}
+	}
+	&__btn {
+		display: inline-block;
+		width: 131px;
+		border: 2px solid #fff;
+		border-radius: 4px;
+		height: 41px;
+		line-height: 37px;
+		cursor: pointer;
+		font-size: 13px;
+		color: #fff;
+		font-weight: 500;
+		text-decoration: none;
+	}
+}
+
+/*
+=====================
+  Полоса информации
+=====================
+*/
+.info-line {
+	font-size: 0;
+	margin: 0 -7px;
+	li {
+		font-size: 13px;
+		margin: 0 7px;
+		display: inline-block;
+		margin-bottom: 7px;
+	}
+	.sep {
+		font-weight: 700;
+		color: #878787;
+	}
+	.icon_que_green {
+		position: relative;
+		top: -2px;
+	}
+	.icon_point {
+		position: relative;
+		top: -3px;
+		margin-right: 10px;
+	}
+}
+.info-line__link {
+	font-size: 13px;
+	font-weight: 300;
+}
+.info-line__link_green {
+	color: $color-green;
+}
+.info-line__link_hint {
+	margin-right: 7px;
+}
+.info-line__text_gray {
+	color: #878787;
+}
+@media($mobile) {
+	.info-line {
+		li {
+			padding: 3px 0;
+		}
+		.sep {display: none}
+		& + .info-line {
+			border-top: 1px solid #c6c6c6;
+			padding-top: 15px;
+		}
+	}
+}
+
+/*
+==========
+  Кнопки
+==========
+*/
+.btn {
+	display: inline-block;
+	vertical-align: top;
+	height: 41px;
+	line-height: 39px;
+	text-decoration: none;
+	border: 1px solid #C6C6C6;
+	border-radius: 4px;
+	font-size: 13px;
+	padding: 0 22px 0 21px;
+	white-space: nowrap;
+	color: inherit;
+	.icons,
+	.icon {
+		margin-right: 10px;
+	}
+	.icon_map {position: relative;top: -3px;}
+	.btn__text {
+		font-size: 13px;
+	}
+}
+.btn__annex {
+	cursor: pointer;
+	padding: 0 11px;
+	border-radius: 0 4px 4px 0;
+}
+.btn_cyan {
+	background: $color-cyan;
+	color: #fff;
+	border-color: $color-cyan;
+}
+.btn__group {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+.btn__group_right {
+	float: right;
+}
+.btn__double {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 0;
+	.btn:not(.btn__annex) {
+		border-radius: 4px 0 0 4px;
+	}
+	.btn {overflow: hidden;}
+	.btn__annex {float: right;}
+
+}
+.btn__double_cyan {
+	.btn {
+		background: $color-cyan;
+		color: #fff;
+		border-color: $color-cyan;
+		margin-right: 1px;
+	}
+	.btn__annex {
+		i {
+			margin-right: 0;
+			transition: transform .3s; 
+		}
+		&:hover {
+			background: #34b2b5;
+		}
+		&.active {
+			background: #34b2b5;
+			i {
+				transform: translateY(-2px) rotate(180deg);
+			}
+		}
+	}
+}
+/* dropdown */
+.btn-dd {
+	display: none;
+	position: absolute;
+	top: 41px;
+	left: 1%;
+	width: 98%;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
+	z-index: 101;
+	padding: 10px 0;
+	background: #fff;
+	&__item {
+		a {
+			display: block;
+			padding: 10px 20px;
+			font-size: 15px;
+			font-weight: 300;
+			&:hover {
+				background: #fbfbfb;
+			}
+		}
+	}
+	&__cbx {
+		&-label {
+	        display: block;
+			padding: 16px 20px;
+			font-size: 15px;
+			font-weight: 300;
+			line-height: 19px;
+	        cursor: pointer;
+			&:hover {
+				background: #fbfbfb;
+			}
+		}
+        &-input {
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        opacity: 0;
+	        visibility: hidden;
+	        &:checked + .btn-dd__cbx-box {
+	            border-color: $color-green;
+	            span {
+	                background-color: $color-green;
+	                background-image: url(../../i/tick.svg);
+	            }
+	        }	
+        }
+	    &-text {
+	    	position: relative;
+	    	top: 1px;
+	        display: inline-block;
+	        vertical-align: middle;
+	        font-size: 15px;
+	    }
+	    &-box {
+	        position: relative;
+	        display: inline-block;
+	        vertical-align: middle;
+	        width: 19px;
+	        height: 19px;
+	        background: #EDEDED;
+	        border: 1px solid #E7E7E7;
+	        margin-right: 16px;
+	        border-radius: 4px;
+	        transition: border-color .3s;
+	        &:hover {
+	            border-color: #999;
+	        }
+	        span {
+	            position: absolute;
+	            top: 0;
+	            left: 0;
+	            width: 100%;
+	            height: 100%;
+	            transition: background .2s;
+	            background-repeat: no-repeat;
+	            background-position: center;
+                background-size: 80%;
+	        }
+	        &:after {
+	            content: '';
+	            position: absolute;
+	            top: -2px;
+	            left: -2px;
+	            width: 43px;
+	            height: 43px;
+	            margin: -11px 0 0 -11px;
+	            border-radius: 50%;
+	            background: transparent;
+	            transition: background .65s;
+                	opacity: .2;
+	        }
+	        &:active {
+	            &:after {
+	                background: $color-green;
+	                transition: .1s;
+	            }
+	        }
+	    }
+	}
+}
+/*
+==========
+  Иконки
+==========
+*/
+@import 'icons';
+.icon {
+	position: relative;
+    background-image: url(../../i/spritesheet.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+.icon_camera{width:25px;height:22px;background-position:-5px -5px}
+.icon_camera_xl{width:44px;height:39px;background-position:-5px -37px}
+.icon_camera_blue {width: 24px;height: 20px;background-position: -5px -1131px;}
+.icon_cloud_blue{width:25px;height:25px;background-position:-5px -86px}
+.icon_cloud_gray{width:23px;height:22px;background-position:-5px -121px}
+.icon_cloud_white{width:23px;height:22px;background-position:-5px -153px}
+.icon_copy_blue{width:35px;height:35px;background-position:-5px -185px}
+.icon_dots{width:30px;height:6px;background-position:-5px -230px}
+.icon_dots_bluesky {width: 30px;height: 6px;background-position: -5px -1161px;}
+.icon_eye{width:32px;height:18px;background-position:-5px -246px}
+.icon_fb_blue{width:35px;height:35px;background-position:-5px -274px}
+.icon_fb_gray{width:41px;height:41px;background-position:-5px -319px}
+.icon_heart{width:25px;height:23px;background-position:-5px -370px}
+.icon_heart_xl{width:29px;height:27px;background-position:-5px -403px}
+.icon_insta_gray{width:41px;height:41px;background-position:-5px -440px}
+.icon_like{width:23px;height:23px;background-position:-5px -491px}
+.icon_map{width:25px;height:22px;background-position:-5px -524px}
+.icon_ok_blue{width:35px;height:35px;background-position:-5px -556px}
+.icon_ok_gray{width:41px;height:41px;background-position:-5px -601px}
+.icon_plus{width:21px;height:21px;background-position:-5px -652px}
+.icon_point{width:17px;height:22px;background-position:-5px -683px}
+.icon_que_gray{width:20px;height:20px;background-position:-5px -715px}
+.icon_que_green{width:20px;height:20px;background-position:-5px -745px}
+.icon_que_white{width:13px;height:31px;background-position:-5px -775px}
+.icon_rt{width:35px;height:15px;background-position:-5px -816px}
+.icon_rt_gray {width: 35px;height: 15px;background-position: 0 -1251px;}
+.icon_share_blue{width:18px;height:26px;background-position:-5px -841px}
+.icon_share_bluesky{width:18px;height:26px;background-position:-5px -877px}
+.icon_star{width:29px;height:28px;background-position:-5px -913px}
+.icon_tag{width:24px;height:18px;background-position:-5px -951px}
+.icon_vk_blue{width:35px;height:35px;background-position:-5px -979px}
+.icon_vk_gray{width:41px;height:41px;background-position:-5px -1024px}
+.icon_arrow_down{width: 17px;height: 11px;background-position: 0 -1070px;}
+.icon_18p {width: 35px;height: 35px;background-position: -5px -1086px;}
+.icon_smile {width: 20px;height: 20px;background-position: -5px -1177px;}
+.icon_user_white {width: 32px;height: 39px;background-position: -5px -1207px;}
+/*
+===================
+  Ссылки действия
+===================
+*/
+
+.action-link {
+	font-size: 15px;
+	font-weight: 300;
+	color: #878787;
+	.icon, .icons {margin-right: 5px;}
+}
+.action-link_like {
+	.icon, .icons {top: -3px;}
+	&.active {
+		// color: #E02B4E;
+	}
+}
+.action-link_view {
+	.icon,
+	.icons {margin-right: 3px; top: -2px;}
+}
+.action-link_fav {
+	color: $color-blue;
+	.icon, .icons {top: -2px;}
+}
+.action-link_comment {
+	color: $color-blue;
+	&.empty {
+		color: #878787;
+	}
+	.icon, .icons {top: -3px;}
+}
+.action-group-link {
+	position: relative;
+}
+/* Блок поделиться */
+.action-link_share {
+	cursor: pointer;
+	.icon_share_bluesky {display: none;}
+	&.active {
+		.icon_share_blue {display: none;}
+		.icon_share_bluesky {display: block;}
+		& + .action-share {display: block;}
+	}
+}
+.action-share {
+	display: none;
+	position: absolute;
+	font-size: 0;
+	right: 47px;
+	top: -24px;
+	z-index: 101;
+	background: #F6F6F6;
+	padding: 19px;
+	border: 1px solid #EDEDED;
+	border-radius: 4px;
+	white-space: nowrap;
+	&:before,
+	&:after {
+		content: '';
+		top: 50%;
+		margin-top: -11px;
+		position: absolute;
+	}
+	&:before {
+		right: -26px;
+		border: 11px solid transparent;
+		border-left: 15px solid #EDEDED;
+	}
+	&:after {
+		right: -25px;
+		border: 11px solid transparent;
+		border-left: 15px solid #F6F6F6;
+	}
+	&__item {
+		font-size: 15px;
+		font-weight: 300;
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 10px;
+		&:first-child {margin-left: 0;}
+	}
+	&__field {
+		height: 35px;
+		border: 1px solid $color-cyan;
+		border-radius: 4px;
+		background: #fff;
+		.icon {
+			cursor: pointer;
+			top: -1px;
+			right: -1px;
+		}
+	}
+	&__input {
+		display: inline-block;
+		height: 100%;
+		vertical-align: top;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		outline: none;
+		border-radius: 4px;
+		padding: 0 10px;
+		font-size: 13px;
+		font-weight: 300;
+		width: 220px;
+	}
+
+	@media($mobile) {
+		top: -38px;
+		right: 39px;
+		text-align: right;
+		padding: 10px;
+		&__item {
+			&:first-child {
+				display: block;
+				margin-bottom: 10px;
+			}
+		}
+		&__input {
+			width: 150px;
+		}
+	}
+}
+/* Конец --- Блок поделиться */
+
+/* Блок настройки поста */
+.action-link_options {
+	cursor: pointer;
+	.icon_dots_bluesky {display: none;}
+	&.active {
+		.icon_dots {display: none;}
+		.icon_dots_bluesky {display: inline-block;}
+		& + .action-options {display: block;}
+	}
+}
+.action-options {
+	display: none;
+	position: absolute;
+	background: #F6F6F6;
+	top: 38px;
+	right: 15px;
+	padding: 29px 30px 28px;
+	border: 1px solid #EDEDED;
+	z-index: 101;
+	border-radius: 4px 0 4px 4px;
+	&:before,
+	&:after {
+		content: '';
+		right: -1px;
+		position: absolute;
+	}
+	&:before {
+		top: -19px;
+		border: 9px solid transparent;	
+		border-right: 9px solid #EDEDED; 
+		border-bottom: 9px solid #EDEDED;
+	}
+	&:after {
+		top: -17px;
+		right: 0;
+		border: 9px solid transparent;	
+		border-right: 9px solid #F6F6F6; 
+		border-bottom: 9px solid #F6F6F6;
+	}
+	&__item {
+		padding: 11px 0;
+		white-space: nowrap;
+		.link {font-weight: 400;}
+	}
+}
+/* Конец --- Блок настройки поста */
+
+
+/*
+=========================
+  Кнопка "Показать еще"
+=========================
+*/
+.btn-more {
+	cursor: pointer;
+	text-decoration: none;
+	background: #F6F6F6;
+	border: 1px solid #EDEDED;
+	height: 61px;
+	line-height: 59px;
+	font-size: 19px;
+	color: $color-blue;
+	text-align: center;
+	border-radius: 4px;
+}
+
+/*
+==================
+  Цветные классы
+==================
+*/
+.gray {color: #878787;}
+
+
+/*
+===========
+  Адаптив
+===========
+*/
+.show-responsive {display: none;}
+@media(max-width: 1023px) {
+	.show-responsive_1023 {display: block;}
+}
+@media($mobile) {
+	.show-responsive_768 {display: block;}
+	/*
+	===========
+	  Кнопки
+	===========
+	*/
+		
+	.btn {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.btn__group {
+		display: block;
+		width: 100%;
+		.btn__double {
+			width: 100%;
+			display: block;
+		}
+		.btn {
+			width: auto;
+		}
+		.btn__annex {
+			margin-left: 1px;
+		}
+	}
+
+	/*==================*/
+
+	.hide-responsive_768 {display: none;}
+}

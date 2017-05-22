@@ -1,0 +1,81 @@
+.popup-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 780px;
+  padding: 0 15px;
+  background: #fff;
+  z-index: 99;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3); }
+
+.popup-nav__top {
+  position: relative;
+  height: 48px;
+  line-height: 48px;
+  border-bottom: 1px solid #eee; }
+
+.popup-nav__ttl {
+  font-size: 15px;
+  font-family: "apercu_pro_bold", Arial, sans-serif;
+  color: #000;
+  padding-left: 25px;
+  background: url(../../i/icon_burger-12.png) no-repeat 0 50%; }
+
+.popup-nav__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  background: url(../../i/ico-x2.png) no-repeat center center; }
+
+.popup-nav__mid {
+  padding: 0 25px; }
+
+.popup-nav__table {
+  margin-top: 25px;
+  width: 100%;
+  table-layout: fixed; }
+
+.popup-nav__td {
+  width: 25%;
+  vertical-align: top;
+  padding-right: 25px; }
+
+.popup-nav-list {
+  margin-bottom: 19px; }
+
+.popup-nav-list__item {
+  color: #000; }
+
+.popup-nav-list__item_ttl {
+  font-size: 15px;
+  font-family: "apercu_pro_bold", Arial, sans-serif;
+  margin-bottom: 7px; }
+
+.popup-nav-list__link {
+  display: inline-block;
+  color: #666;
+  font-size: 11px;
+  line-height: 18px; }
+
+.popup-nav__bot {
+  margin: 0 -15px;
+  height: 67px;
+  background: #EBEBEB; }
+
+.popup-nav__btn {
+  line-height: 25px;
+  padding: 0 9px;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #999999;
+  border: 1px solid #999999;
+  font-family: "apercu_pro", Arial, sans-serif;
+  float: right;
+  margin-top: 20px;
+  margin-right: 15px; }

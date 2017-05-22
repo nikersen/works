@@ -1,0 +1,33 @@
+/*styles components Стили присутсвующие везде*/
+@import 'components/common.scss';
+/*styles blocks Попап подписки*/
+@import 'blocks/subscribe-popup.scss';
+/*styles blocks Левая навигация*/
+@import 'blocks/left-nav.scss';
+/*styles page Новинки*/
+@import 'pages/novetly.scss';
+/*styles page Карта тегов*/
+@import 'pages/map.scss';
+/*styles page Список авторов*/
+@import 'pages/authors.scss';
+/*styles page Международное право*/
+@import 'pages/rights.scss';
+/*styles page Список событий*/
+@import 'pages/events.scss';
+/*styles page Блог*/
+@import 'pages/blog.scss';
+/*styles page Список книг*/
+@import 'pages/books.scss';
+/*styles page Обзоры книг*/
+@import 'pages/review-book.scss';
+/*styles page Вакансии*/
+@import 'pages/vacancy.scss';
+/*styles page Контакты*/
+@import 'pages/contacts.scss';
+/*styles page Автор*/
+@import 'pages/author.scss';
+/*styles page Книга*/
+@import 'pages/book.scss';
+
+
+

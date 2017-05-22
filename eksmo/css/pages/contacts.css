@@ -1,0 +1,17 @@
+.contacts__adress-text {
+  overflow: hidden; }
+
+.contacts__adress-btn {
+  width: 186px;
+  height: 38px;
+  line-height: 38px;
+  background: #B70046;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: inline-block; }

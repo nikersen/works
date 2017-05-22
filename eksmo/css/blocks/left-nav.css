@@ -1,0 +1,62 @@
+.left-nav {
+  position: fixed;
+  top: 50%;
+  width: 20px;
+  margin-left: -55px;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateY(-50%) translateZ(0) scale(1, 1); }
+  .left-nav__mouse {
+    width: 18px;
+    height: 42px;
+    background: url(../../i/mouse.png) no-repeat center center;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+    -webkit-animation: moveHint 1s infinity;
+    -o-animation: moveHint 1s infinite;
+    animation: moveHint 1s infinite; }
+  .left-nav__link {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 20px;
+    text-align: center; }
+    .left-nav__link:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      border: 2px solid #fff;
+      width: 1px;
+      height: 1px;
+      border-radius: 50%;
+      transition: all .15s; }
+    .left-nav__link:nth-child(2n) {
+      margin-bottom: 40px; }
+    .left-nav__link.active:after {
+      width: 16px;
+      height: 16px; }
+
+@-webkit-keyframes moveHint {
+  0% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px); }
+  50% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px); }
+  100% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px); } }
+
+@keyframes moveHint {
+  0% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px); }
+  50% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px); }
+  100% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px); } }

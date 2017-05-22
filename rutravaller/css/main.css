@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/* font Roboto */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic");
+/*===========================================================================================*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+body {
+  background: #F2F2F2; }
+
+/*
+===================
+  Каркас страницы
+===================
+*/
+.page {
+  position: relative;
+  color: #000;
+  max-width: 1260px;
+  min-width: 320px;
+  margin: auto;
+  background-color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  line-height: normal;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+.content {
+  padding: 20px; }
+
+.content-table {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%; }
+
+.col {
+  position: relative;
+  display: table-cell;
+  vertical-align: top;
+  height: 100%; }
+
+.col_left {
+  width: 225px;
+  padding-right: 20px; }
+
+.col_right {
+  width: 200px;
+  padding-left: 20px; }
+
+.teast {
+  height: 600px;
+  background: #eee;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px; }
+
+/*
+=============
+  Заголовки
+=============
+*/
+h1, h2, h3, h4, h5, h6 {
+  display: inline-block;
+  margin: 0;
+  padding: 0; }
+
+.title {
+  padding-bottom: 20px; }
+
+.title-h1 {
+  font-size: 31px;
+  font-weight: 500;
+  margin-right: 15px; }
+
+.title-h2 {
+  font-size: 21px;
+  font-weight: 300;
+  margin-right: 15px; }
+  .title-h2 + .title-rate {
+    top: -2px; }
+
+.title-rate {
+  position: relative;
+  top: 3px;
+  text-decoration: none;
+  padding: 0 10px;
+  display: inline-block;
+  vertical-align: top;
+  height: 30px;
+  border: 1px solid #008D36;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 28px; }
+  .title-rate .text {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 300;
+    color: #008D36; }
+  .title-rate .num {
+    color: #000; }
+    .title-rate .num .num_min {
+      font-size: 13px; }
+  .title-rate .icon {
+    margin-right: 6px; }
+
+.title-rate_mute {
+  border-color: #878787; }
+  .title-rate_mute .text {
+    color: #000; }
+
+/*
+===================
+  Адаптив каркаса
+===================
+*/
+@media (max-width: 1100px) {
+  .col_right {
+    display: none; } }
+
+@media (max-width: 800px) {
+  /*
+    =============
+      Заголовки
+    =============
+    */
+  .title {
+    padding-bottom: 10px; }
+  .title-rate,
+  .title-h1,
+  .title-h2 {
+    margin-bottom: 10px; }
+  .col_left {
+    width: 0; } }

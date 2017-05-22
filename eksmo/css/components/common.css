@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*Скролбар*/
+.scrollarea {
+  position: relative;
+  max-height: 500px;
+  overflow: hidden;
+  margin-left: -60px;
+  padding-left: 60px; }
+
+.ps-theme-eksmo.ps-container .ps-scrollbar-x-rail {
+  visibility: hidden; }
+
+.ps-theme-eksmo.ps-container .ps-scrollbar-y-rail {
+  right: auto !important;
+  left: 0;
+  opacity: 1;
+  width: 12px;
+  border: 1px solid #2D2D2D; }
+
+.ps-theme-eksmo.ps-container .ps-scrollbar-y {
+  width: 12px;
+  right: -1px;
+  background: #B70046; }
+
+.ps-theme-eksmo.ps-container .ps-scrollbar-y-rail:hover, .ps-theme-eksmo.ps-container .ps-scrollbar-y-rail.hover {
+  opacity: 1;
+  background: transparent; }
+
+.ps-theme-eksmo.ps-container:hover .ps-scrollbar-y-rail, .ps-theme-eksmo.ps-container.hover .ps-scrollbar-y-rail {
+  opacity: 1; }
+
+.ps-theme-eksmo.ps-container .ps-scrollbar-y-rail:hover .ps-scrollbar-y, .ps-theme-eksmo.ps-container .ps-scrollbar-y-rail.hover .ps-scrollbar-y {
+  background: #B70046; }

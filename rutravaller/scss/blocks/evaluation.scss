@@ -1,0 +1,72 @@
+@import '../variables';
+
+.evaluation {
+	padding: 20px;
+	border: 1px solid #c6c6c6;
+	border-radius: 4px;
+	margin-bottom: 12px;
+	&__items {
+		margin: 0 -13px;
+		&:first-child {margin-top: -12px;}
+	}
+	&__item {
+		width: 50%;
+		min-width: 260px;
+		float: left;
+		padding: 9px 13px;
+	}
+	&__label {
+		font-size: 15px;
+		font-weight: 300;
+		margin-bottom: 9px;
+	}
+	&__bar {
+		position: relative;
+		width: 100%;
+		height: 30px;
+		border-radius: 4px;
+		overflow: hidden;
+		background: #EDEDED;
+		&-text {
+			position: absolute;
+			top: 0;
+			left: 10px;
+			white-space: nowrap;
+			line-height: 30px;
+			z-index: 1;
+			font-size: 15px;
+			font-weight: 300;
+		}
+		&-line {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			overflow: hidden;
+			background: tomato;
+			transition: width .3s;
+			z-index: 2;
+			.evaluation__bar-text {
+				color: #fff;
+			}
+		}
+		&.high {.evaluation__bar-line {background: #3AAA35;}}
+		&.mid {.evaluation__bar-line {background: #D1CC26;}}
+		&.low {.evaluation__bar-line {background: #EA4E1B;}}
+	}
+	&__desc {
+		margin-bottom: 6px;
+		margin-top: 8px;
+		font-size: 15px;
+		font-weight: 300;
+		span {color: #878787;}
+	}
+}
+
+@media(max-width: 850px) and (min-width: 768px) {.evaluation__item {width: 100%;}}
+@media(max-width: 600px) {
+	.evaluation__item {width: 100%;}
+	.evaluation__desc {
+		line-height: 2;	
+	}
+}

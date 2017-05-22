@@ -1,0 +1,48 @@
+@import '../variables';
+
+.blog {
+	&__body {
+		background: #16131D;
+		padding: 40px;
+	}
+	&__post {
+
+	}
+	&__title {
+		color: #fff;
+		font-size: 32px;
+		margin-bottom: 10px;
+	}
+	&__date {
+		color: #ccc;
+		font-style: italic;
+		margin-bottom: 30px;
+	}
+	&__text {
+		font-size: 16px;
+		line-height: 24px;
+		color: #cacaca;
+		margin-bottom: 20px;
+	}
+	&__images {
+		font-size: 0;
+		margin: -10px;
+	}
+	&__image {
+		display: inline-block;
+		font-size: 14px;
+		padding: 10px;
+		width: 50%;
+		margin: 0;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	@media(max-width: 800px) {
+		&__body {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}

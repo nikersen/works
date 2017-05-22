@@ -1,0 +1,105 @@
+@import 'variables';
+body, html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	background: $color-dark;
+}
+* {
+	box-sizing: border-box;
+}
+.page {
+	height: 100%;
+	background: $color-dark;
+	font-size: 14px;
+	font-family: $font;
+	min-width: 320px;
+}
+.wrapper {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.social {
+	font-size: 0;
+	&__item {
+		font-size: 22px;
+		color: #fff;
+		text-decoration: none;
+		margin-right: 15px;
+		&:last-child {margin-right: 0;}
+		i.fa-facebook {font-size: 20px;}
+	}
+}
+.title-group {
+	position: relative;
+}
+.title {
+	color: #fff;
+	margin: 5px 0 30px;
+	font-size: 40px;
+	font-weight: 500;	
+	font-family: $intro;
+}
+
+.content {
+	height: 100%;
+	.wrapper {
+		height: 100%;
+		padding-left: 75px;
+	}
+
+}
+.content-section {
+	position: relative;
+	padding: 80px 20px 100px;
+	height: 100%;
+	&_mid {
+		width: 775px;
+		margin: auto;
+	}
+}
+@media(max-width: $tablet) {
+	.content-section_mid {
+		width: 100%;
+		max-width: 775px;
+	}
+}
+
+// Переключение языков
+.ru {.lang-eng {display: none;}}
+.eng {.lang-ru {display: none;}}
+
+@media(max-width: 800px) {
+	.content {
+		padding-top: 69px;
+		height: auto;
+		.wrapper {
+			padding-left: 0;
+		}
+		&-section {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Оверлей*/
+#overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.8);
+	z-index: 100;
+}

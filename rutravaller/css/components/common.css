@@ -1,0 +1,181 @@
+@charset "UTF-8";
+.tags {
+  font-size: 0; }
+
+.tags_left {
+  padding-left: 20px;
+  margin-bottom: 18px; }
+
+.tags_center {
+  margin-bottom: 19px; }
+
+.tags__item {
+  display: inline-block;
+  margin-right: 10px; }
+
+.tags__link {
+  display: inline-block;
+  text-decoration: none;
+  color: #338eaa;
+  padding: 0 8px;
+  line-height: 25px;
+  font-family: "apercu_pro_demibold", Arial, sans-serif;
+  font-size: 12px;
+  border-radius: 3px;
+  background: #E6F1F5; }
+
+.tags__link_back {
+  position: relative;
+  padding: 0 10px 0 6px;
+  border-radius: 0 3px 3px 0; }
+  .tags__link_back:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -21px;
+    border-top: 12px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 12px solid transparent;
+    border-right: 9px solid #E6F1F5; }
+
+.tags__link_cat {
+  text-transform: uppercase;
+  font-family: "apercu_pro_bold", Arial, sans-serif; }
+
+.tags__link_last {
+  color: #666666;
+  background: #ECECEC; }
+
+/* Информационные элементы (количество просмотров, счетчик мне нравится и т.д.) */
+.inform__item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: #bbbbbb;
+  font-size: 12px;
+  margin-right: 17px; }
+  .inform__item:last-child {
+    margin-right: 0; }
+  .inform__item:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../../i/inform-sprite.png) no-repeat; }
+
+.inform__item_views {
+  padding-left: 16px; }
+  .inform__item_views:after {
+    top: 2px;
+    width: 13px;
+    height: 9px;
+    background-position: -25px -3px; }
+
+.inform__item_users {
+  padding-left: 20px; }
+  .inform__item_users:after {
+    top: -1px;
+    width: 16px;
+    height: 12px;
+    background-position: 0 0; }
+
+.inform__item_likes {
+  color: #0f9e56;
+  padding-left: 19px; }
+  .inform__item_likes:after {
+    width: 15px;
+    height: 12px;
+    background-position: -46px 0; }
+
+/* Кнопка наверх */
+.ontop-clickzone {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  z-index: 1;
+  text-align: right;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .15s ease; }
+  .ontop-clickzone:hover {
+    background: rgba(255, 255, 255, 0.6); }
+  .ontop-clickzone.fixed {
+    visibility: visible;
+    opacity: 1; }
+
+.ontop-clickzone_show {
+  visibility: visible;
+  opacity: 1; }
+
+.ontop-clickzone_down .ontop__icon {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.ontop__icon {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  margin-right: -15px;
+  width: 30px;
+  height: 30px;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease; }
+
+.ontop__svg {
+  width: 30px;
+  height: 30px;
+  fill: #bbb; }
+
+/* Рекламный блок */
+.banner-rt,
+.banner-rt * {
+  box-sizing: border-box; }
+
+.banner-rt {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  background: url(../../i/banner_pattern.png) repeat top center;
+  max-height: 120px;
+  text-align: center;
+  overflow: hidden; }
+  .banner-rt > img {
+    vertical-align: top;
+    height: 100%; }
+  .banner-rt > div:not(.banner-rt__close) {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    max-height: 94px; }
+  .banner-rt yatag {
+    margin-left: auto;
+    margin-right: auto; }
+
+.banner-rt_wrap {
+  padding: 13px 20px; }
+
+.banner-rt__close {
+  position: absolute;
+  top: 10px;
+  right: 17px;
+  width: 20px;
+  height: 20px;
+  background: url(../../i/icon-close-14x15.png) no-repeat center center; }
+
+@media screen and (max-width: 1365px) {
+  .ontop-clickzone {
+    display: none; } }
+
+@media screen and (min-width: 1599px) {
+  .ontop-clickzone {
+    width: 100px; } }
+
+@media screen and (min-width: 1800px) {
+  .ontop-clickzone {
+    width: 200px; } }

@@ -1,0 +1,159 @@
+@import '../variables';
+
+
+.author {
+	position: relative;
+	padding-left: 210px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	&-wrap {
+		.scrollarea {
+			bottom: 0;
+			margin-left: -25px;
+			padding-left: 25px;
+		}
+	}
+	&__photo {
+		width: 210px;
+		height: 210px;
+		overflow: hidden;
+		position: absolute;
+		top: 50px;
+		left: 0;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__info {
+		padding-left: 40px;
+		color: #fff;
+	}
+	&__head {
+		margin-bottom: 40px;
+	}
+	&__name {
+		color: #fff;
+		font-size: 42px;
+		margin-bottom: 20px;
+	}
+	&__text {
+		color: #cacaca;
+		font-size: 18px;
+		line-height: 24px;
+		span {
+			display: inline-block;
+			margin-right: 10px;
+		}
+		.social {
+			vertical-align: top;
+			display: inline-block;
+			margin-bottom: -5px;
+		}
+		&-link {
+			color: $color-pink;
+			display: inline-block;
+		    text-decoration: none;
+		    border-bottom: 1px solid $color-pink;
+		    line-height: 1;
+		    color: $color-pink;
+		}
+		&_title {
+			margin-top: 30px;
+			margin-bottom: 10px;
+			font-size: 20px;
+			color: #fff;
+		}
+	}
+	@media(max-width: 800px) {
+		padding: 20px 0;
+		&__photo {
+			position: static;
+			width: 60px;
+			height: 60px;
+			margin-bottom: 20px;
+		}
+		&__info {
+			padding: 0;
+		}
+	}
+	@media(max-width: 600px) {
+		&__name {
+			font-size: 30px;
+		}
+	}
+
+	&-books {
+		position: relative;
+		overflow: hidden;
+		font-size: 0;
+		padding-bottom: 40px;
+		&__item {
+			font-size: 14px;
+			display: inline-block;
+			vertical-align: top;
+			width: 33.3333%;
+			text-decoration: none;
+			color: #fff;
+		}
+		&__book {
+			padding: 20px;
+			text-align: center;
+			&-cover {
+				height: 160px;
+				overflow: hidden;
+				margin-bottom: 15px;
+				img {
+					height: 100%;
+					width: auto;
+					max-width: 100%;
+				}
+			}
+			&-name {
+				font-size: 16px;
+			}
+		}
+		.slick-slide {
+			* {
+				outline: none;
+			}
+		}
+		.slick-slide {outline: none}
+		.slick-slide img {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.slick-arrow {
+			position: absolute;
+			bottom: 20px;
+			background: url('../i/icons-sprite.png') no-repeat; 
+			font-size: 0;
+			outline: none;
+			border: none;
+			cursor: pointer;
+		}
+		.slick-next {
+			right: 50%;
+			margin-right: -35px;
+			background-position: -5px -194px; width: 26px; height: 20px;
+		}
+		.slick-prev {
+			left: 50%;
+			margin-left: -35px;
+			background-position: -5px -169px; width: 26px; height: 20px;
+		}
+		@media(max-width: 600px) {
+			&__item {
+					width: 50%;
+			}
+			&__book {
+				&-cover {
+					height: 120px;
+				}
+				&-name {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

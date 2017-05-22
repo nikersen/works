@@ -1,0 +1,35 @@
+@import '../variables';
+.title.title_onmap {
+	padding-bottom: 15px;
+	.title-h2 {margin-right: 5px;}
+}
+.onmap {
+	&__map {
+		height: 300px;
+		overflow: hidden;
+		border-radius: 4px 4px 0 0;
+		img {
+			min-width: 100%;
+			min-height: 100%;
+		}
+	}
+}
+.onmap-info {
+	border: 1px solid #C6C6C6;
+	border-top: none;
+	border-radius: 0 0 4px 4px;
+	padding: 20px 20px 23px;
+	font-size: 0;
+	&__item {
+		padding: 7px 0 6px;
+		display: inline-block;
+		margin-right: 40px;
+		font-size: 15px;
+		font-weight: 300;
+		&:last-child {margin-right: 0;}
+	}
+	&__label {
+		margin-bottom: 7px;
+		color: #878787;
+	}
+}

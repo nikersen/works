@@ -1,0 +1,216 @@
+@import '../variables';
+
+.searchbar {
+	background: #F2F2F2;
+	height: 50px;
+	border-radius: 4px;
+	&__field {
+		position: relative;
+		height: 100%;
+		padding: 0 120px 0 20px;
+	}
+	&__input {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: none;
+		outline: none;
+		background: transparent;
+		font-size: 15px;
+		font-weight: 300;
+	}
+	&__submit {
+		position: absolute;
+		top: 10px;
+		right: 30px;
+	    border: none;
+	    outline: none;
+	    cursor: pointer;
+	    background-color: transparent;
+	    background-image: url(../../i/mega-sprite.png);
+	    width: 30px; height: 30px; background-position: -499px -499px;
+	}
+	&__list-trigger {
+		position: absolute;
+		top: 16px;
+		right: 89px;
+	    width: 25px;
+	    height: 18px;
+	    display: block;
+	    background-position: -36px -5px;
+	    background-image: url(../../i/header_sprite.png);
+	    cursor: pointer;
+	}
+}
+
+.suggest {
+	position: absolute;
+	top: 51px;
+	left: 0;
+	right: 0;
+	z-index: 101;
+	background: #fff;
+	min-height: 400px;
+	box-shadow: 0 0 15px 5px rgba(0,0,0,.1);
+	padding-top: 110px;
+	padding-bottom: 50px;
+	display: none;
+	&__wrapper {
+		height: 100%;
+		overflow-y: auto;
+	}
+	&__content {
+		margin-left: 245px;
+		margin-right: 309px;
+		max-width: 686px;
+	}
+	&__item {
+		margin-bottom: 25px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #eee;
+		&:last-child {
+			padding-bottom: 0;
+			border: 0;
+		}
+	}
+	&__title {
+		display: inline-block;
+		font-weight: 300;
+		font-size: 19px;
+		line-height: 25px;
+		padding: 0 20px;
+		margin-bottom: 9px;	
+	}
+	&__count {
+		color: #878787;
+	}
+	&__list {
+		margin-top: 9px;
+		display: table;
+		width: 100%;
+		&_has-photo {margin-top: 16px;}
+
+		&-item {
+			display: table-row;
+			text-decoration: none;
+			color: #000;
+			transition: background .1s;
+			&:hover {
+				background: #E6F0F5;
+			}
+		}
+		&-col {
+			display: table-cell;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-right: 20px;
+			vertical-align: middle;
+			&_photo {
+				padding-right: 30px;
+				width: 150px;
+			}
+			&:first-child {
+				padding-left: 20px;
+			}
+		}
+		&-name {
+			font-size: 15px;
+			line-height: 20px;
+			font-weight: 300;
+
+		}
+		&-place {
+			font-size: 13px;
+			line-height: 18px;
+			font-weight: 300;
+			color: #878787;
+		}
+		&-photo {
+			width: 100px;
+			height: 80px;
+			border-radius: 4px;
+			overflow: hidden;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+	&__tags {
+		padding: 0 20px;
+		display: table;
+		&-col {
+			display: table-cell;
+			padding-right: 36px;
+		}
+		&-item {
+			display: block;
+			vertical-align: top;
+			white-space: nowrap;
+			font-size: 15px;	
+			font-weight: 300;
+			line-height: 40px;
+		}
+	}
+	&__found {color: #E02B4E;}
+	
+	@media($tablet) {
+		top: 113px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		&__title {
+			padding: 0 10px;
+		}
+		&__content {
+			max-width: 100%;
+			margin: 0 10px;
+		}
+		&__list {
+			&-col {
+				padding-right: 10px;
+				&_photo {
+					width: 130px;
+					padding-right: 20px;
+				}
+				&:first-child {
+					padding-left: 10px;
+				}
+			}
+		}
+		&__tags {
+			display: block;
+			padding: 0 10px;
+			&-col {
+				display: inline;
+				padding-right: 0;
+			}
+			&-item {
+				// display: inline-block;
+			}
+		}
+	}
+}
+
+/*
+========================
+  Когда открыт саджест
+========================
+*/
+.suggest-show {
+	.header-mid__logo, 
+	.searchbar,
+	.user {
+		position: relative;
+		z-index: 102;
+	}
+}
+
+/*
+===========
+  Адаптив
+===========
+*/
+@media(max-width: 1023px) {
+	.searchbar {border-radius: 0;}
+	.searchbar__list-trigger {display: none;}
+	.searchbar__submit {right: 20px;}
+}
