@@ -263,6 +263,12 @@
             font-size: 18px;
             line-height: 24px;
         }
+        &__email {
+            display: inline-block;
+            margin-top: 10px;
+            color: $color-pink;
+            font-size: 14px;
+        }
         @media(max-width: 800px) {
             &__item {
                 width: auto;
